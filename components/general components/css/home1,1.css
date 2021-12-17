@@ -1,0 +1,84 @@
+*{
+    margin:0;
+    padding:0;
+    /* overflow-x: hidden; */
+ }
+ body{
+     overflow-x: hidden;
+ }
+ /* ------ paralex ---------------- */
+.main{
+    width:100%;
+    height:100vh;
+    background-image:url('../../../photos/minimalist-desktop-10.jpg');
+    background-size:100% 100%;
+    background-attachment:fixed;
+    transition: 1000ms;
+    }
+
+section{
+    width: 100%;
+    min-height: 1px;
+    }
+.content{
+    width:50%;
+    min-height:1px;margin-top:10%;
+    margin-left:10%;
+    color:white;
+    }
+/* ------ paralex end ---------------- */
+
+#terrain{
+
+    width: 100%;
+    transform: rotate(6deg);
+    height: 250px;
+
+
+}
+#cave{
+    width: 100%;
+    margin-top: -10px;
+    background-color: white;
+}
+    #progress {
+       
+        position: sticky;
+        left: -20px;
+        bottom: -10px;
+        z-index: 1;
+        width: 100%;
+        transform: rotate(-6deg);
+      }
+
+      .progress-container {
+        margin-bottom: -70px;
+        display: flex;
+        width: 100%;
+        height: 8px;
+        /* background: #04AA6D; */
+
+      }
+      
+      .progress-bar {
+        height: 8px;
+        /* background: #04AA6D; */
+        width: 0%;
+      }
+      .test{
+          color: aliceblue;
+          float: left;
+      }
+      #biker{
+        height:100px;
+        margin-top: -30px;
+      }
+
+      #main-body{
+        margin-top: -10px;
+        padding: 20px;
+          height: 1000px;
+          background-color: white;
+      }
+
+      
