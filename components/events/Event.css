@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300&family=Roboto:wght@300&display=swap');
+:root {
+    --green:
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    background-color: white;
+    margin: 0;
+    overflow-x: hidden;
+    margin: 30px;
+}
+
+.upcoming {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50%;
+}
+
+.eventetup {
+    background-color: black;
+    width: 300pt;
+    height: 300pt;
+    margin: 10px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    flex: 0.5;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+
+.eventetup.active {
+    display: flex;
+    flex: 3;
+}
+
+.eventetup.active img {
+    height: 65%;
+    width: auto;
+}
+
+.eventetup.active h3 {
+    font-size: 60px;
+    margin: 0;
+}
+
+.eventetup.active button {
+    background-color: red;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.eventetup.active .read {
+    visibility: hidden;
+}
+
+.eventetup.active .description {
+    margin: 0px;
+    padding: 0px;
+    visibility: visible;
+}
+
+@media (max-width:480px) {
+    .upcoming {
+        width: 100vw;
+    }
+}
+
+.upfoto {
+    height: auto;
+    width: 100%;
+    padding: 0px;
+}
+
+.text {
+    margin: 0px 20px;
+    padding-top: 10px;
+}
+
+.text h3 {
+    font-size: 30pt;
+    margin: 0px 0px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.text p {
+    margin: 0px 0px;
+    padding: 0;
+    opacity: 1;
+}
+
+.description {
+    opacity: 0;
+    color: white;
+    visibility: hidden;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
