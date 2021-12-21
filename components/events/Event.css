@@ -6,72 +6,70 @@
 body {
     font-family: "Lato", sans-serif;
     background-color: white;
-    margin: 0;
     overflow-x: hidden;
-    margin: 30px;
+    margin: 30px 50px 0px 50px;
 }
 
 .upcoming {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 50%;
+    position: relative;
 }
 
-.eventetup {
+.upcoming ul {
+    display: inline;
+    padding: 0;
+}
+
+.upcoming li {
+    display: block;
+    list-style: none;
     background-color: black;
-    width: 300pt;
-    height: 300pt;
-    margin: 10px;
+    box-sizing: border-box;
+    height: 600px;
+    position: relative;
+    margin: 15px 25px;
+    cursor: pointer;
     border-radius: 20px;
     color: white;
-    cursor: pointer;
-    flex: 0.5;
-    position: relative;
-    transition: flex 0.7s ease-in;
+    z-index: 1;
 }
 
-.eventetup.active {
-    display: flex;
-    flex: 3;
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    transition: .5s ease;
+    background-color: blue;
+    z-index: 1;
 }
 
-.eventetup.active img {
-    height: 65%;
-    width: auto;
+#text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
 }
 
-.eventetup.active h3 {
-    font-size: 60px;
-    margin: 0;
-}
-
-.eventetup.active button {
-    background-color: red;
-    margin-top: 10px;
-    margin-bottom: 0px;
-}
-
-.eventetup.active .read {
-    visibility: hidden;
-}
-
-.eventetup.active .description {
-    margin: 0px;
-    padding: 0px;
-    visibility: visible;
-}
-
-@media (max-width:480px) {
-    .upcoming {
-        width: 100vw;
+@media screen and (max-width: 800px) {
+    .upcoming ul {
+        flex-direction: column;
     }
 }
 
-.upfoto {
+img {
+    max-height: 300px;
+    min-height: 100px;
     height: auto;
     width: 100%;
-    padding: 0px;
+    z-index: 2;
 }
 
 .text {
@@ -83,6 +81,7 @@ body {
     font-size: 30pt;
     margin: 0px 0px;
     font-family: 'Bebas Neue', cursive;
+    z-index: 10;
 }
 
 .text p {
@@ -92,7 +91,7 @@ body {
 }
 
 .description {
-    opacity: 0;
+    position: absolute;
     color: white;
     visibility: hidden;
 }
@@ -109,4 +108,9 @@ button {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 10px;
+}
+
+button:hover {
+    background-color: red;
+    transform: scale(1.02);
 }
