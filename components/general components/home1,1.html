@@ -3,6 +3,7 @@
 
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='./css/home1,1.css' rel='stylesheet' type='text/css' />
     <script src='./js/home1,1.js'></script>
@@ -11,47 +12,102 @@
 <body class='main'>
 
 
-    <section id="one">
-        <div class='content'>
-            <h1 style='font-size:5vw;'>first heading</h1>
-            <p style='font-size:3vw;'>description</p>
-        </div>
-    </section>
-    <section id="two" style='margin-top:100vh'>
-        <div class='content'>
-            <h1 style='font-size:5vw;'>second heading</h1>
-            <p style='font-size:3vw;'>description</p>
-        </div>
-    </section>
-    <section id="three" style='margin-top:100vh'>
-        <div class='content'>
-            <h1 style='font-size:5vw;'>third heading</h1>
-            <p style='font-size:3vw;'>description</p>
-        </div>
-    </section>
-    <section id="four" style='margin-top:120vh'>
-        <div class='content' style='margin-bottom:10%;'>
-            <h1 style='font-size:5vw;'>fourth heading</h1>
-            <p style='font-size:3vw;'>description</p>
+    <section id="one" style=''>
+        <div data-aos="fade-right">
+            <div class='content'>
+                <h1 style='font-size:5vw;'>first heading</h1>
+                <p style='font-size:3vw;'>description</p>
+            </div>
         </div>
     </section>
 
+
+
+    <section id="two" style='margin-top: 100vh;'>
+
+        <div data-aos="fade-right">
+            <div class='content'>
+                <h1 style='font-size:5vw;'>second heading</h1>
+                <p style='font-size:3vw;'>description</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="three" style='margin-top: 100vh;'>
+
+        <div data-aos="fade-right">
+            <div class='content'>
+                <h1 style='font-size:5vw;'>third heading</h1>
+                <p style='font-size:3vw;'>description</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="four" style='margin-top: 100vh; margin-bottom: 30vh;'>
+
+        <div data-aos="fade-right">
+            <div class='content'>
+                <h1 style='font-size:5vw;'>fourth heading</h1>
+                <p style='font-size:3vw;'>description</p>
+            </div>
+        </div>
+    </section>
+
+
     <div id="progress">
+        
+        <div id="div_t">
+            <img id="terrain" src="../../photos/back.png" alt="no pic">
+        </div>
         <div class="progress-container">
             <div class="progress-bar" id="myBar">
             </div>
             <img id="biker" src="../../photos/bike-biking.gif" alt="no img found">
         </div>
-        <div id="div_t">
-            <img id="terrain" src="../../photos/Untitled.png" alt="">
-        </div>
     </div>
-    
-    
+
+
     <img id="cave" src="../../photos/cave.png" alt="">
-    <div id="main-body" >
-        hello world
+
+    <div id="main-body">
+
+        <h1 style="text-align: center; padding: 20px; margin-top: -150px; ">perks of our web page
+        </h1>
+
+        <div class="events">
+
+            <div class="pic" data-aos="fade-up" data-aos-duration="3000">
+                <div style=" background:none">
+                    <img src="../../photos/Saved-Events.png" width=300px alt="no picture">
+                    <img src="../../photos/events.png" width=300px style="margin-left: -60px; margin-bottom: -60px;"
+                        alt="no picture">
+                </div>
+            </div>
+            <div class="text" data-aos="fade-up" data-aos-duration="1000">
+                <h2>title 1</h2>
+
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita reiciendis similique aliquid.
+                    Suscipit sed vero
+                    fuga tenetur possimus est, ratione optio dolor nemo natus. Corporis non eius laborum ab dolore.
+                    tetur adipisicing elit. Expedita reiciendis similique aliquid. Suscipit sed vero
+                    fuga tenetur possimus est, ratione optio dolor nemo natus. Corporis non eius laborum</p>
+                <!-- <div class="test" style=" background: red;"> -->
+            </div>
+
+        </div>
+
     </div>
+
+    </div>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
