@@ -1,28 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300&family=Roboto:wght@300&display=swap');
 :root {
-    --green:
+    --green: #89ED7A;
 }
 
 body {
     font-family: "Lato", sans-serif;
     background-color: white;
     overflow-x: hidden;
-    margin: 30px 50px 0px 50px;
+    margin: 50px 50px 0px 50px;
+    background-color: #BCFFB0;
 }
 
-.upcoming {
+.nen_titull {
+    display: flex;
+    text-shadow: 0 0 0.3rem #b7f3ae;
+    color: white;
+    font-weight: 700;
+    font-size: 30pt;
+    border-style: none;
+    background-image: linear-gradient(0.25turn, var(--green), #BCFFB0);
+    padding: 5px 15px;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.container {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    flex-direction: row;
 }
 
-/* .upcoming ul {
-    display: inline;
-    padding: 0;
-} */
+.container1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: row;
+}
 
-.eventetup{
+.eventet {
     display: block;
     list-style: none;
     background-color: black;
@@ -34,7 +52,10 @@ body {
     color: white;
     z-index: 1;
 }
+
+
 /* qita kod e bon overlay me funksionu */
+
 .overlay {
     position: absolute;
     top: 0;
@@ -43,20 +64,24 @@ body {
     right: 0;
     height: 100%;
     width: 100%;
-    opacity: 0;
+    visibility: hidden;
     transition: .5s ease;
-    background-color: #008CBA;
+    background-image: linear-gradient(black, var(--green));
     border-radius: 20px;
-  }
-  
-  .eventetup:hover .overlay {
-    opacity: 1;
-  }
-  
-  .description {
-      margin: 0;
+}
+
+.eventet:active .overlay {
+    visibility: visible;
+}
+
+.eventet:hover {
+    filter: drop-shadow(0 0 0.6rem black);
+}
+
+.description {
+    margin: 0;
     color: white;
-    font-size:2vh;
+    font-size: 2vh;
     position: absolute;
     width: 92%;
     top: 50%;
@@ -65,7 +90,7 @@ body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
-  }
+}
 
 #text {
     position: absolute;
@@ -75,13 +100,19 @@ body {
     -ms-transform: translate(-50%, -50%);
 }
 
+
 /* deri qitu kodi */
 
-.read{
+.read {
     padding-bottom: 20px;
 }
-@media screen and (max-width: 800px) {
-    .upcoming ul {
+
+.read:hover {
+    filter: drop-shadow(0 0 0.3rem white);
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
         flex-direction: column;
     }
 }
@@ -96,19 +127,19 @@ img {
 
 .text {
     margin: 0px 20px;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .text h3 {
-    font-size: 30pt;
+    font-size: 40pt;
     margin: 0px 0px;
     font-family: 'Bebas Neue', cursive;
     z-index: 10;
+    color: white;
 }
 
 .text p {
     margin: 0px 0px;
-
     opacity: 1;
 }
 
@@ -124,9 +155,15 @@ button {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 button:hover {
     background-color: red;
     transform: scale(1.02);
+}
+
+#review {
+    margin-bottom: 30px;
 }
