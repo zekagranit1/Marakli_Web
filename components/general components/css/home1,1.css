@@ -1,12 +1,23 @@
+@font-face {
+  font-family:rockwell;
+  src: url(../../../font/rockwell/ROCK.TTF);
+}
 *{
     margin:0;
     padding:0;
     /* overflow-x: hidden; */
+    font-family: rockwell;
+    letter-spacing: 2px;
  }
  body{
      overflow-x: hidden;
  }
  /* ------ paralex ---------------- */
+ .flexRow{
+   display: flex;
+   flex-direction: row;
+   justify-content:space-evenly;
+ }
 .main{
     width:100%;
 
@@ -21,12 +32,12 @@ section{
     min-height: 1px;
     }
 .content{
-    width:50%;
+    width:40%;
     min-height:1px;margin-top:10%;
-    margin-left:10%;
     color:white;
-    background: rgba(128, 128, 128, 0.171);
-    filter: blur(1);
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.562);
+    /* background: rgba(128, 128, 128, 0.171); */
+    /* filter: blur(1); */
     }
 /* ------ paralex end ---------------- */
 
@@ -108,12 +119,92 @@ padding-left: 40px;
 padding-right: 40px;
 }
 
+/* slider of team */
+
+/* external css: flickity.css */
+.gallery{
+  box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.1);
+  justify-content: center; 
+  padding: 20px; 
+  margin-bottom: 80px;
+  background: rgb(0,255,166);
+background: linear-gradient(90deg, rgba(0, 255, 115,0.5) 0%, rgba(255,255,255,1) 26%, rgba(255,255,255,1) 71%, rgba(0, 255, 115, 0.5) 100%);
+}
+
+.gallery-cell {
+  text-align: center;
+  padding: 10px;
+  width: 250px;
+  margin:20px;
+
+  background:white;
+  /* min-height: 400px; */
+  box-shadow: 0px 0px 13px #7e9f7c5e;
+  /* counter-increment: gallery-cell; */
+  transition: 0.5s;
+}
+.gallery-cell:hover {
+  transition: 0.5s;
+  background:rgb(219, 255, 238);
+  /* min-height: 400px; */
+  box-shadow: 0px 0px 13px #7e9f7c;
+  /* counter-increment: gallery-cell; */
+}
+.gallery-cell img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid #ACFFA5;
+  margin: 20px;
+  margin-bottom: 5px;
+
+  /* counter-increment: gallery-cell; */
+}
+.tekst{
+  margin: 10px;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 10px;
+}
+.tekst h4{
+  margin-bottom: 3px;
+
+}
+.tekst h5{
+  margin-bottom: 5px;
+  font-weight: 300;
+}
+.tekst p{
+  font-size: 13px;
+  margin-top: 15px;
+
+}
+.social{
+  padding-bottom: 5px;
+  text-align: center;
+}
+.social .fa{
+  width: 12px;
+  font-size: 12px;
+  color: rgb(97, 212, 168);
+  border: 2px solid rgb(97, 212, 168);
+}
+.social .fa:hover{
+  background: rgb(97, 212, 168);
+  color: rgb(212, 255, 239);
+  border: 2px solid rgb(212, 255, 239);
+}
+
+/* cell number */
+
+
 
 /* footer */
 footer {
   text-align: center;
   padding: 3px;
-  background-color: rgb(48, 64, 82);
+  background-color: rgb(43, 126, 94);
   color: white;
 }
 .flex{
@@ -135,29 +226,14 @@ color: white;}
   text-decoration: none;
   margin: 5px 2px;
   border-radius: 50%;
+  color: rgb(197, 255, 233);
+  border: 2px solid rgb(65, 211, 155);
 }
 
 .fa:hover {
-  opacity: 0.7;
-}
-
-.fa-facebook {
-background: #3B5998;
-color: white;
-}
-
-.fa-twitter {
-background: #55ACEE;
-color: white;
-}
-
-.fa-linkedin {
-  background: #007bb5;
   color: white;
+border: 2px solid white;
 }
 
-.fa-instagram {
-  background: #dd3488;
-  color: white;
-}
+
 
