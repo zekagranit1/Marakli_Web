@@ -18,7 +18,7 @@
             background: rgb(0, 255, 166);
             background: linear-gradient(90deg, rgba(0, 255, 115, 0.5) 0%, rgba(255, 255, 255, 1) 26%, rgba(255, 255, 255, 1) 71%, rgba(0, 255, 115, 0.5) 100%);
         }
-        
+
         .gallery-cell {
             text-align: center;
             padding: 10px;
@@ -42,12 +42,12 @@
         }
 
         .gallery-cell img {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             border: 4px solid #ACFFA5;
             margin: 20px;
-            margin-bottom: 5px;
+            margin-bottom: 0px;
 
             /* counter-increment: gallery-cell; */
         }
@@ -61,12 +61,14 @@
         }
 
         .tekst h4 {
-            margin-bottom: 3px;
 
+            margin-bottom: 0px;
+            margin-top: 3px;
         }
 
         .tekst h5 {
-            margin-bottom: 5px;
+            margin-top: 3px;
+            margin-bottom: 0px;
             font-weight: 300;
         }
 
@@ -127,116 +129,146 @@
             border: 2px solid white;
         }
 
-        .hiden{
+        .hiden {
             display: none;
             transition: 1s;
         }
+
+        @font-face {
+  font-family:subslack;
+  src: url(../../font/subslack/SublackDemoRegular.ttf);
+}
+        .switch {
+            background:none;
+            
+            border: 2px solid #60a55c85;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 30px;
+            font-weight: bolder;
+            color: #60a55c85;
+            margin-top: auto;
+            margin-bottom: auto;
+            /* text-shadow: 0px 0px 10px rgba(27, 18, 29, 0); */
+            line-height: 15px;
+            padding: 10px;
+            transition: 0.5s;
+        }
+        .switch:hover {
+            transition: 0.5s;
+            border: 2px solid #2b4e2a85;
+            color: #2a4d2885;
+            /* text-shadow: 0px 0px 10px rgba(27, 18, 29, 0.555); */
+
+        }
+
     </style>
+    
 </head>
 
 <body>
-    
+
     <div class="flexRow gallery">
-        <button onclick="prev()"> < </button>
-        <div class="gallery-cell hiden">
-            <img src="../../photos/28n.jpg" alt="">
-            <div class="tekst">
+        <button class="switch" onclick="prev()"> < </button>
+                <div class="gallery-cell hiden">
+                    <img src="../../photos/28n.jpg" alt="">
+                    <div class="tekst">
 
-                <h4>Betim Sperdhima5</h4>
-                <h5>Menaxher Gjeneral</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco </p>
-            </div>
-            <div class="social">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-twitter"></a>
-                <a href="#" class="fa fa-linkedin"></a>
-            </div>
-        </div>
-        <div class="gallery-cell">
-            <img src="../../photos/mali.jpg" alt="">
-            <div class="tekst">
-
-                <h4>Betim Sperdhima1</h4>
-                <h5>Menaxher Gjeneral</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco </p>
-            </div>
-            <div class="social">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-twitter"></a>
-                <a href="#" class="fa fa-linkedin"></a>
-            </div>
-        </div>
-        <div class="gallery-cell">
-            <img src="../../photos/minimalist-desktop-10.jpg" alt="">
-            <div class="tekst">
-
-                <h4>Betim Sperdhima2</h4>
-                <h5>Menaxher Gjeneral</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco </p>
-            </div>
-            <div class="social">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-twitter"></a>
-                <a href="#" class="fa fa-linkedin"></a>
-            </div>
-        </div>
-        <div class="gallery-cell">
-            <img src="../../photos/minimalist-desktop-7.jpg" alt="">
-            <div class="tekst">
-
-                <h4>Betim Sperdhima3</h4>
-                <h5>Menaxher Gjeneral</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco </p>
-            </div>
-            <div class="social">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-twitter"></a>
-                <a href="#" class="fa fa-linkedin"></a>
-            </div>
-            <div class="gallery-cell hiden">
-                <img src="../../photos/babadimrat.jpg" alt="">
-                <div class="tekst">
-    
-                    <h4>Betim Sperdhima4</h4>
-                    <h5>Menaxher Gjeneral</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco </p>
+                        <h4>Betim Sperdhima5</h4>
+                        <h5>Menaxher Gjeneral</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco </p>
+                    </div>
+                    <div class="social">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-linkedin"></a>
+                    </div>
                 </div>
-                <div class="social">
-                    <a href="#" class="fa fa-facebook"></a>
-                    <a href="#" class="fa fa-twitter"></a>
-                    <a href="#" class="fa fa-linkedin"></a>
+                <div class="gallery-cell">
+                    <img src="../../photos/mali.jpg" alt="">
+                    <div class="tekst">
+
+                        <h4>Betim Sperdhima1</h4>
+                        <h5>Menaxher Gjeneral</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco </p>
+                    </div>
+                    <div class="social">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-linkedin"></a>
+                    </div>
                 </div>
-            </div>
-        </div>
-        
-        <button onclick="next()"> > </button>
+                <div class="gallery-cell">
+                    <img src="../../photos/minimalist-desktop-10.jpg" alt="">
+                    <div class="tekst">
+
+                        <h4>Betim Sperdhima2</h4>
+                        <h5>Menaxher Gjeneral</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco </p>
+                    </div>
+                    <div class="social">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-linkedin"></a>
+                    </div>
+                </div>
+                <div class="gallery-cell">
+                    <img src="../../photos/minimalist-desktop-7.jpg" alt="">
+                    <div class="tekst">
+
+                        <h4>Betim Sperdhima3</h4>
+                        <h5>Menaxher Gjeneral</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco </p>
+                    </div>
+                    <div class="social">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-linkedin"></a>
+                    </div>
+
+                </div>
+                <div class="gallery-cell hiden">
+                    <img src="../../photos/babadimrat.jpg" alt="">
+                    <div class="tekst">
+
+                        <h4>Betim Sperdhima4</h4>
+                        <h5>Menaxher Gjeneral</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco </p>
+                    </div>
+                    <div class="social">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-linkedin"></a>
+                    </div>
+                </div>
+
+                <button class="switch" onclick="next()"> > </button>
     </div>
     <script>
         var galleryList = document.getElementsByClassName('gallery-cell')
-        function prev(){
-            galleryList[galleryList.length-1].classList.remove('hiden')
-
-            galleryList[galleryList.length-1].after(galleryList[0])
+        function prev() {
+            galleryList[galleryList.length - 1].classList.remove('hiden')
+            galleryList[galleryList.length - 1].after(galleryList[0])
             galleryList[0].classList.remove('hidden')
-            galleryList[0].classList.add('hiden')    
+            galleryList[0].classList.add('hiden')
 
-    }
-        function next(){
+        }
+        function next() {
 
             galleryList[0].classList.remove('hiden')
-            galleryList[0].before(galleryList[galleryList.length-1])
-            galleryList[galleryList.length-1].classList.remove('hidden')
-            galleryList[galleryList.length-1].classList.add('hiden')    
+            galleryList[0].before(galleryList[galleryList.length - 1])
+            galleryList[galleryList.length - 1].classList.remove('hidden')
+            galleryList[galleryList.length - 1].classList.add('hiden')
 
         }
     </script>

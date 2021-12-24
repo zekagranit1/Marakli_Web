@@ -119,47 +119,6 @@ padding-left: 40px;
 padding-right: 40px;
 }
 
-/* slider of team */
-
-/* external css: flickity.css */
-.gallery{
-  box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.1);
-  justify-content: center; 
-  padding: 20px; 
-  margin-bottom: 80px;
-  background: rgb(0,255,166);
-background: linear-gradient(90deg, rgba(0, 255, 115,0.5) 0%, rgba(255,255,255,1) 26%, rgba(255,255,255,1) 71%, rgba(0, 255, 115, 0.5) 100%);
-}
-
-.gallery-cell {
-  text-align: center;
-  padding: 10px;
-  width: 250px;
-  margin:20px;
-
-  background:white;
-  /* min-height: 400px; */
-  box-shadow: 0px 0px 13px #7e9f7c5e;
-  /* counter-increment: gallery-cell; */
-  transition: 0.5s;
-}
-.gallery-cell:hover {
-  transition: 0.5s;
-  background:rgb(219, 255, 238);
-  /* min-height: 400px; */
-  box-shadow: 0px 0px 13px #7e9f7c;
-  /* counter-increment: gallery-cell; */
-}
-.gallery-cell img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 4px solid #ACFFA5;
-  margin: 20px;
-  margin-bottom: 5px;
-
-  /* counter-increment: gallery-cell; */
-}
 .tekst{
   margin: 10px;
   text-align: center;
@@ -180,25 +139,6 @@ background: linear-gradient(90deg, rgba(0, 255, 115,0.5) 0%, rgba(255,255,255,1)
   margin-top: 15px;
 
 }
-.social{
-  padding-bottom: 5px;
-  text-align: center;
-}
-.social .fa{
-  width: 12px;
-  font-size: 12px;
-  color: rgb(97, 212, 168);
-  border: 2px solid rgb(97, 212, 168);
-}
-.social .fa:hover{
-  background: rgb(97, 212, 168);
-  color: rgb(212, 255, 239);
-  border: 2px solid rgb(212, 255, 239);
-}
-
-/* cell number */
-
-
 
 /* footer */
 footer {
@@ -237,3 +177,141 @@ border: 2px solid white;
 
 
 
+/* card slider */
+
+        /* external css: flickity.css */
+        .gallery {
+          box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.1);
+          justify-content: center;
+          padding: 20px;
+          margin-bottom: 80px;
+          background: rgb(0, 255, 166);
+          background: linear-gradient(90deg, rgba(0, 255, 115, 0.5) 0%, rgba(255, 255, 255, 1) 26%, rgba(255, 255, 255, 1) 71%, rgba(0, 255, 115, 0.5) 100%);
+      }
+
+      .gallery-cell {
+          text-align: center;
+          padding: 10px;
+          width: 250px;
+          margin: 20px;
+          display: block;
+          background: white;
+          /* min-height: 400px; */
+          box-shadow: 0px 0px 13px #7e9f7c5e;
+          /* counter-increment: gallery-cell; */
+          transition: 0.5s;
+          transition: 1s;
+      }
+
+      .gallery-cell:hover {
+          transition: 0.5s;
+          background: rgb(219, 255, 238);
+          /* min-height: 400px; */
+          box-shadow: 0px 0px 13px #7e9f7c;
+          /* counter-increment: gallery-cell; */
+      }
+
+      .gallery-cell img {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          border: 4px solid #ACFFA5;
+          margin: 20px;
+          margin-bottom: 0px;
+
+          /* counter-increment: gallery-cell; */
+      }
+
+      .tekst {
+          margin: 10px;
+          text-align: center;
+          padding-left: 15px;
+          padding-right: 15px;
+          margin-bottom: 10px;
+      }
+
+      .tekst h4 {
+
+          margin-bottom: 0px;
+          margin-top: 3px;
+      }
+
+      .tekst h5 {
+          margin-top: 3px;
+          margin-bottom: 0px;
+          font-weight: 300;
+      }
+
+      .tekst p {
+          font-size: 13px;
+          margin-top: 15px;
+
+      }
+
+      .social {
+          padding-bottom: 5px;
+          text-align: center;
+      }
+
+      .social .fa {
+          width: 12px;
+          font-size: 12px;
+          color: rgb(97, 212, 168);
+          border: 2px solid rgb(97, 212, 168);
+      }
+
+      .social .fa:hover {
+          background: rgb(97, 212, 168);
+          color: rgb(212, 255, 239);
+          border: 2px solid rgb(212, 255, 239);
+      }
+
+      .flexRow {
+          display: flex;
+          justify-content: center;
+          flex-direction: row;
+      }
+
+      ul li {
+          list-style: none;
+          margin-bottom: 5px;
+      }
+
+      a {
+          text-decoration: none;
+          color: white;
+      }
+
+
+      .hiden {
+          display: none;
+          transition: 1s;
+      }
+
+      @font-face {
+font-family:subslack;
+src: url(../../font/subslack/SublackDemoRegular.ttf);
+}
+      .switch {
+          background:none;
+          
+          border: 2px solid #60a55c85;
+          border-radius: 50%;
+          cursor: pointer;
+          font-size: 30px;
+          font-weight: bolder;
+          color: #60a55c85;
+          margin-top: auto;
+          margin-bottom: auto;
+          /* text-shadow: 0px 0px 10px rgba(27, 18, 29, 0); */
+          line-height: 15px;
+          padding: 10px;
+          transition: 0.5s;
+      }
+      .switch:hover {
+          transition: 0.5s;
+          border: 2px solid #2b4e2a85;
+          color: #2a4d2885;
+          /* text-shadow: 0px 0px 10px rgba(27, 18, 29, 0.555); */
+
+      }
