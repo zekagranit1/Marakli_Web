@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300&family=Roboto:wght@300&display=swap');
 :root {
-    --green: #89ED7A;
+    --blue: #0E49B5;
+    --green: #54E346;
 }
 
 body {
@@ -8,17 +9,16 @@ body {
     background-color: white;
     overflow-x: hidden;
     margin: 50px 50px 0px 50px;
-    background-color: #BCFFB0;
+    background-color: white;
 }
 
 .nen_titull {
     display: flex;
-    text-shadow: 0 0 0.3rem #b7f3ae;
     color: white;
     font-weight: 700;
     font-size: 30pt;
     border-style: none;
-    background-image: linear-gradient(0.25turn, var(--green), #BCFFB0);
+    background-color: var(--blue);
     padding: 5px 15px;
     align-items: center;
     border-radius: 20px;
@@ -66,8 +66,7 @@ body {
     width: 100%;
     visibility: hidden;
     transition: .5s ease;
-    background-image: linear-gradient(black, var(--green));
-    border-radius: 20px;
+    background-color: var(--blue);
 }
 
 .eventet:active .overlay {
@@ -117,6 +116,12 @@ body {
     }
 }
 
+@media screen and (max-width: 1000px) {
+    .container1 {
+        flex-direction: column;
+    }
+}
+
 img {
     max-height: 300px;
     min-height: 100px;
@@ -144,15 +149,15 @@ img {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: var(--green);
     border: none;
     color: white;
-    padding: 10px 50px;
+    padding: 8px 45px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    font-size: 18px;
+    font-weight: 700;
     cursor: pointer;
     border-radius: 10px;
     margin-top: 10px;
@@ -160,7 +165,7 @@ button {
 }
 
 button:hover {
-    background-color: red;
+    background-color: var(--blue);
     transform: scale(1.02);
 }
 
