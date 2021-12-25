@@ -1,0 +1,48 @@
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.profile{
+    text-align: center;
+    border: 3px solid black;
+    width: 27%;
+    height: min-content;
+    padding: 20px;
+    margin: 20px;
+}
+.profile img{
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 320px;
+    border-radius: 50%;
+
+}
+
+.events{
+    margin: 15px;
+    width: 100%;
+}
+.events-holder{
+    
+}
+.events-holder img{
+    width: 30%;
+}
+.info{
+padding: 10px;
+padding-left: 20px;
+}
+.event-card{
+    
+}
+.event-card{
+    border: 3px solid black;
+}
+.events h1{
+    margin-left: 10px;
+}
