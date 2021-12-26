@@ -5,10 +5,13 @@
 }
 
 body {
+    margin: 0;
+}
+.main{
     font-family: "Lato", sans-serif;
     background-color: white;
     overflow-x: hidden;
-    margin: 50px 50px 0px 50px;
+    margin: 50px 50px 50px 50px;
     background-color: white;
 }
 
@@ -171,4 +174,48 @@ button:hover {
 
 #review {
     margin-bottom: 30px;
+}
+  /* footer */
+  footer {
+    text-align: center;
+    padding: 3px;
+    background-color: rgb(43, 126, 94);
+    color: white;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+ul li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+ul{
+    padding: 0;
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 15px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+    color: rgb(197, 255, 233);
+    border: 2px solid rgb(65, 211, 155);
+}
+
+.fa:hover {
+    color: white;
+    border: 2px solid white;
 }
