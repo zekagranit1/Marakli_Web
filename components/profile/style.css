@@ -15,7 +15,6 @@ body {
     color: #666;
     font-size: 13px;
     margin: 0;
-   
 }
 
 input,
@@ -79,10 +78,10 @@ form {
 .form-group .form-wrapper {
     width: 50%;
 }
+
 .form-group .form-wrapper {
     width: 50%;
 }
-
 
 .form-group .form-wrapper:first-child {
     margin-right: 20px;
@@ -107,7 +106,8 @@ form {
     font-family: "Muli-Bold";
     background: none;
 }
-.mosha{
+
+.mosha {
     width: 30%;
     border-radius: 5px;
     padding: 0px 10px;
@@ -128,31 +128,39 @@ select {
 select option[value=""][disabled] {
     display: none;
 }
+
 .form-group .form-wrapper {
     width: 50%;
 }
-.form-group .gjinia {
+
+.form-group .form-width {
     width: 30%;
 }
-.check{
+
+.check {
     display: flex;
     font-size: 14px;
-    /* justify-content: center;  */
-}
-.radio{
-    padding-right:10px ;
 }
 
-.gjinia{
+.form-wrapper .radio {
+    margin: 0px;
+    padding-right: 10px;
+    margin: 0px;
+}
+
+.gjinia {
     display: flex;
     flex-direction: column;
 }
-.form-wrapper .gjinia-margin{
-    margin-bottom: 12px;
+
+.form-wrapper .gjinia-margin {
+    margin-bottom: 15px;
 }
-input{
-    margin: 0px 3px 0px 0px;
+
+input {
+    margin: 3px 3px 0px 0px;
 }
+
 button {
     border: none;
     width: 152px;
@@ -272,4 +280,3 @@ button:hover:before {
         padding-left: 15px;
     }
 }
-
