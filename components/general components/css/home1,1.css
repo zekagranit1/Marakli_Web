@@ -322,21 +322,7 @@ border: 2px solid white;
 font-family:subslack;
 src: url(../../font/subslack/SublackDemoRegular.ttf);
 } 
-      .switch {
-          background:none;
-          border: 2px solid 5;
-          border-radius: 50%;
-          cursor: pointer;
-          font-size: 30px;
-          font-weight: bolder;
-          color: #60a55c85;
-          margin-top: auto;
-          margin-bottom: auto;
-          /* text-shadow: 0px 0px 10px rgba(27, 18, 29, 0); */
-          line-height: 15px;
-          padding: 10px;
-          transition: 0.5s;
-      }
+
       .switch:hover {
           transition: 0.5s;
           border: 2px solid #2b4e2a85;
@@ -344,3 +330,21 @@ src: url(../../font/subslack/SublackDemoRegular.ttf);
           /* text-shadow: 0px 0px 10px rgba(27, 18, 29, 0.555); */
 
       }
+    
+      i{
+      padding: auto;
+      line-height: 15px !important;
+      width: 15px !important;
+      font-size: 25px!important;
+      padding: 10px !important;
+      cursor: pointer !important;
+      margin-top: auto !important;
+      margin-bottom: auto !important;
+      color: white!important;
+      border: 2px solid white!important;
+      transition: 0.5s;
+    }
+    i:hover{
+      color: #4CAF50!important;
+      background:white!important;
+    }

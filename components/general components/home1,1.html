@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='./css/home1,1.css' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src='./js/home1,1.js'></script>
 </head>
 
@@ -171,9 +173,9 @@
 
     </div>
     <h2 style="text-align: center; margin-bottom: 20px;">Our Team</h2>
-    <h2 style="text-align: center; margin-bottom: 20px;">Our Team</h2>
     <div class="flexRow gallery">
-        <button class="switch" onclick="prev()"> < </button>
+       <i class="switch fa fa-caret-left" aria-hidden="true" onclick="prev()"></i>
+        <!-- <i class='fas fa-caret-left'></i>  -->
                 <div class="gallery-cell hiden">
                     <img src="../../photos/28n.jpg" alt="">
                     <div class="tekst">
@@ -256,7 +258,7 @@
                     </div>
                 </div>
 
-                <button class="switch" onclick="next()"> > </button>
+                <i class="switch fa fa-caret-right" aria-hidden="true" onclick="next()" style="padding-left: 14px !important;"></i>
     </div>
     <footer style="padding: 30px;">
         <div class="flex">
