@@ -2,19 +2,19 @@ $(window).on("scroll touchmove", function()
 {
     if ($(document).scrollTop() >= $("#one").position().top && $(document).scrollTop() < $("#two").position().top  ) 
     {
-        $('body').css('background-image', 'url(../../photos/babadimrat.jpg)')
+        $('body').css('background-image', 'url(../../photos/bg1.jpg)')
     };
     if ($(document).scrollTop() >= $("#two").position().top && $(document).scrollTop() < $("#three").position().top)
     {
-        $('body').css('background-image', 'url(../../photos/28n.jpg)')
+        $('body').css('background-image', 'url(../../photos/bg2.jpg)')
     };
    if ($(document).scrollTop() >= $("#three").position().top && $(document).scrollTop() < $("#four").position().top ) 
    {
-        $('body').css('background-image', 'url(../../photos/prishtina_marakli.jpg)')
+        $('body').css('background-image', 'url(../../photos/bg3.jpg)')
    };
    if ($(document).scrollTop() >= $("#four").position().top) 
    {
-        $('body').css('background-image', 'url(../../photos/mali.jpg)')
+        $('body').css('background-image', 'url(../../photos/bg4.jpg)')
 
    };
    if ($(document).scrollTop() >= ($("#cave").position().top )) 
