@@ -2,28 +2,27 @@
 <html lang="en">
 
 <head>
-    <script src="./js/login.js"></script>
     <link rel="stylesheet" href="./css/login.css">
     <script src="https://kit.fontawesome.com/de3305a7cd.js" crossorigin="anonymous"></script>
     <title>Sign in</title>
 </head>
 
 <body>
-
+    
     <div class="container" id="container">
         <div class="form-container sign-up-container">
             <form action="#">
                 <h1>Create Account</h1>
                 <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.google.com" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="../general components/home1,1.html" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email for registration</span>
                 <input type="text" placeholder="Name" />
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Password" />
-                <button>Sign Up</button>
+                <button><a href="../profile/Sign up.html">Sign Up</a></button>
             </form>
         </div>
         <div class="form-container sign-in-container">
@@ -31,16 +30,16 @@
                 <h1>Sign in</h1>
                 <div class="social-container">
                     <a href="#" class="social" onclick="href='https://www.facebook.com/'"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social" onclick="href='https://accounts.google.com/ServiceLogin/signinchooser?service=mail&passive=1209600&osid=1&continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&emr=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin'"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social" onclick="href='https://www.linkedin.com/'"><i
+                        class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social" onclick="href='https://accounts.google.com/ServiceLogin/signinchooser?service=mail&passive=1209600&osid=1&continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&emr=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin'"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social" onclick="href='https://www.linkedin.com/'"><i
                             class="fab fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your account</span>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
+                        </div>
+                        <span>or use your account</span>
+                        <input id="email" type="email" placeholder="Email" />
+                        <input id="pass" type="password" placeholder="Password" />
                 <a href="#">Forgot your password?</a>
-                <button>Sign In</button>
+                <button id="sign" onclick="validation()">Sign In</button>
             </form>
         </div>
         <div class="overlay-container">
@@ -53,14 +52,15 @@
                 <div class="overlay-panel overlay-right">
                     <h1>Hej, marakli</h1>
                     <p>Kliko - "Sign up" për tu bërë pjesë e grupit ma të qartë #Maraklit'biciklave</p>
-
+                    
                     <button class="ghost" onclick="window.location.href='../profile/Sign up.html'" id="signUp">Sign
                         Up</button>
-
+                        
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
-
+        <script src="./js/login.js"></script>
+    </body>
+    
 </html>
