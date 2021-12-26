@@ -2,6 +2,10 @@
   font-family:rockwell;
   src: url(../../../font/rockwell/ROCK.TTF);
 }
+:root {
+  --blue: #0E49B5;
+  --green: #54E346;
+}
 *{
     margin:0;
     padding:0;
@@ -183,8 +187,7 @@ border: 2px solid white;
           justify-content: center;
           padding: 20px;
           margin-bottom: 80px;
-          background: rgb(0, 255, 166);
-          background: linear-gradient(90deg, rgba(0, 255, 115, 0.5) 0%, rgba(255, 255, 255, 1) 26%, rgba(255, 255, 255, 1) 71%, rgba(0, 255, 115, 0.5) 100%);
+          background:var(--green)
       }
 
       .gallery-cell {
@@ -195,7 +198,7 @@ border: 2px solid white;
           display: block;
           background: white;
           /* min-height: 400px; */
-          box-shadow: 0px 0px 13px #7e9f7c5e;
+          box-shadow: 0px 0px 13px #18ff0c5e;
           /* counter-increment: gallery-cell; */
           transition: 0.5s;
           transition: 1s;
@@ -203,19 +206,22 @@ border: 2px solid white;
 
       .gallery-cell:hover {
           transition: 0.5s;
-          background: rgb(219, 255, 238);
+          background: var(--blue);
           /* min-height: 400px; */
-          box-shadow: 0px 0px 13px #7e9f7c;
+          box-shadow: 0px 0px 13px #9f7c99;
+          cursor:pointer;
+          color:white;
           /* counter-increment: gallery-cell; */
       }
-
+      
       .gallery-cell img {
           width: 120px;
           height: 120px;
           border-radius: 50%;
-          border: 4px solid #ACFFA5;
+          border: 4px solid white;
           margin: 20px;
           margin-bottom: 0px;
+          
 
           /* counter-increment: gallery-cell; */
       }
@@ -254,12 +260,12 @@ border: 2px solid white;
       .social .fa {
           width: 12px;
           font-size: 12px;
-          color: rgb(97, 212, 168);
-          border: 2px solid rgb(97, 212, 168);
+          color: var(--green);
+          border: 2px solid var(--green);
       }
 
       .social .fa:hover {
-          background: rgb(97, 212, 168);
+          background: var(--green);
           color: rgb(212, 255, 239);
           border: 2px solid rgb(212, 255, 239);
       }
