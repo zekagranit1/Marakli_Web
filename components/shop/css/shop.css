@@ -334,3 +334,48 @@ body {
     opacity: 1;
     transform: translateY(0);
   } */
+
+  /* footer */
+  footer {
+    text-align: center;
+    padding: 3px;
+    background-color: rgb(43, 126, 94);
+    color: white;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+ul li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+ul{
+    padding: 0;
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 15px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+    color: rgb(197, 255, 233);
+    border: 2px solid rgb(65, 211, 155);
+}
+
+.fa:hover {
+    color: white;
+    border: 2px solid white;
+}
