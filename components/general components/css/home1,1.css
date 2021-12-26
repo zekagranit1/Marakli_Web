@@ -138,7 +138,31 @@ section {
     /* filter: blur(1); */
 }
 
-
+.Join-us{
+    text-align: center;
+}
+.Join-us h2{
+    font-size: 30px;
+}
+.Join-us h1{
+    font-size:5vw; 
+}
+.Join-us button{
+    border: none;
+    font-size: 24px;
+    background: #54E346;
+    margin-top: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    transition: 0.5s;
+}
+.Join-us button:hover{
+    background: #3fdf31;
+    transition: 0.5s;
+    transform: translateY(-5px);
+}
 /* ------ paralex end ---------------- */
 
 #terrain {
