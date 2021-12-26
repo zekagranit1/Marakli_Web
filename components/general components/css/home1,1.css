@@ -24,7 +24,8 @@
  }
 .main{
     width:100%;
-    background-image: url('../../../photos/bg1.jpg');
+  
+    background-image:url('../../../photos/bg1.jpg');
     background-size:100% 100%;
     background-attachment:fixed;
     transition: 1000ms;
@@ -86,9 +87,9 @@ section{
           float: left;
       }
       #biker{
+        height:105px;
+        margin-top: -155px;
 
-        height:111px;
-        margin-top: -160px;
       }
 
       #main-body{
@@ -291,15 +292,39 @@ border: 2px solid white;
           display: none;
           transition: 1s;
       }
+      .previous a {
+        text-decoration: none;
+        display: inline-block;
+        padding: 8px 16px;
+    }
+    
+    .previous a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    
+    .previous {
+        background-color: #f1f1f1;
+        color: black;
+    }
+    
+    .next {
+        background-color: #4CAF50;
+        color: white;
+    }
+    
+    .previous .round {
+        border-radius: 50%;
+    }
+    
 
       @font-face {
 font-family:subslack;
 src: url(../../font/subslack/SublackDemoRegular.ttf);
-}
+} 
       .switch {
           background:none;
-          
-          border: 2px solid #60a55c85;
+          border: 2px solid 5;
           border-radius: 50%;
           cursor: pointer;
           font-size: 30px;
