@@ -69,6 +69,7 @@ a:hover {
 form {
     width: 50%;
     padding-left: 45px;
+    margin: 0px;
 }
 
 .form-group {
@@ -144,7 +145,7 @@ select option[value=""][disabled] {
 
 .form-wrapper .radio {
     margin: 0px;
-    padding-right: 10px;
+    padding-right: 19px;
     margin: 0px;
 }
 

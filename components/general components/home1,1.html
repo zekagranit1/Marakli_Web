@@ -10,9 +10,52 @@
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src='./js/home1,1.js'></script>
+
+    <style>
+        input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+    </style>
 </head>
 
 <body class='main'>
+    <div id="navbar">
+        <img id="logo-pic" src="../../photos/logo.png" alt="no pic found">
+        <div id="nav-holder">
+            <a href="#default" id="logo">Marakli T'Bicikllave</a>
+            <div id="navbar-right">
+                <a class="active link" href="#" >Join Us</a>
+                <!-- <div>||</div> -->
+                <a class="link" href="#">login</a>
+            </div>
+        </div>
+    </div>
 
 
     <section id="one">
@@ -174,91 +217,116 @@
     </div>
     <h2 style="text-align: center; margin-bottom: 20px;">Our Team</h2>
     <div class="flexRow gallery">
-       <i class="switch fa fa-caret-left" aria-hidden="true" onclick="prev()"></i>
+        <i class="switch fa fa-caret-left" aria-hidden="true" onclick="prev()"></i>
         <!-- <i class='fas fa-caret-left'></i>  -->
-                <div class="gallery-cell hiden">
-                    <img src="../../photos/28n.jpg" alt="">
-                    <div class="tekst">
+        <div class="gallery-cell hiden">
+            <img src="../../photos/28n.jpg" alt="">
+            <div class="tekst">
 
-                        <h4>Betim Sperdhima5</h4>
-                        <h5>Menaxher Gjeneral</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco </p>
-                    </div>
-                    <div class="social">
-                        <a href="#" class="fa fa-facebook"></a>
-                        <a href="#" class="fa fa-twitter"></a>
-                        <a href="#" class="fa fa-linkedin"></a>
-                    </div>
-                </div>
-                <div class="gallery-cell">
-                    <img src="../../photos/mali.jpg" alt="">
-                    <div class="tekst">
+                <h4>Betim Sperdhima5</h4>
+                <h5>Menaxher Gjeneral</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco </p>
+            </div>
+            <div class="social">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+            </div>
+        </div>
+        <div class="gallery-cell">
+            <img src="../../photos/mali.jpg" alt="">
+            <div class="tekst">
 
-                        <h4>Betim Sperdhima1</h4>
-                        <h5>Menaxher Gjeneral</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco </p>
-                    </div>
-                    <div class="social">
-                        <a href="#" class="fa fa-facebook"></a>
-                        <a href="#" class="fa fa-twitter"></a>
-                        <a href="#" class="fa fa-linkedin"></a>
-                    </div>
-                </div>
-                <div class="gallery-cell">
-                    <img src="../../photos/minimalist-desktop-10.jpg" alt="">
-                    <div class="tekst">
+                <h4>Betim Sperdhima1</h4>
+                <h5>Menaxher Gjeneral</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco </p>
+            </div>
+            <div class="social">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+            </div>
+        </div>
+        <div class="gallery-cell">
+            <img src="../../photos/minimalist-desktop-10.jpg" alt="">
+            <div class="tekst">
 
-                        <h4>Betim Sperdhima2</h4>
-                        <h5>Menaxher Gjeneral</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco </p>
-                    </div>
-                    <div class="social">
-                        <a href="#" class="fa fa-facebook"></a>
-                        <a href="#" class="fa fa-twitter"></a>
-                        <a href="#" class="fa fa-linkedin"></a>
-                    </div>
-                </div>
-                <div class="gallery-cell">
-                    <img src="../../photos/minimalist-desktop-7.jpg" alt="">
-                    <div class="tekst">
+                <h4>Betim Sperdhima2</h4>
+                <h5>Menaxher Gjeneral</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco </p>
+            </div>
+            <div class="social">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+            </div>
+        </div>
+        <div class="gallery-cell">
+            <img src="../../photos/minimalist-desktop-7.jpg" alt="">
+            <div class="tekst">
 
-                        <h4>Betim Sperdhima3</h4>
-                        <h5>Menaxher Gjeneral</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco </p>
-                    </div>
-                    <div class="social">
-                        <a href="#" class="fa fa-facebook"></a>
-                        <a href="#" class="fa fa-twitter"></a>
-                        <a href="#" class="fa fa-linkedin"></a>
-                    </div>
+                <h4>Betim Sperdhima3</h4>
+                <h5>Menaxher Gjeneral</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco </p>
+            </div>
+            <div class="social">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+            </div>
 
-                </div>
-                <div class="gallery-cell hiden">
-                    <img src="../../photos/babadimrat.jpg" alt="">
-                    <div class="tekst">
+        </div>
+        <div class="gallery-cell hiden">
+            <img src="../../photos/babadimrat.jpg" alt="">
+            <div class="tekst">
 
-                        <h4>Betim Sperdhima4</h4>
-                        <h5>Menaxher Gjeneral</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco </p>
-                    </div>
-                    <div class="social">
-                        <a href="#" class="fa fa-facebook"></a>
-                        <a href="#" class="fa fa-twitter"></a>
-                        <a href="#" class="fa fa-linkedin"></a>
-                    </div>
-                </div>
+                <h4>Betim Sperdhima4</h4>
+                <h5>Menaxher Gjeneral</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco </p>
+            </div>
+            <div class="social">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+            </div>
+        </div>
 
-                <i class="switch fa fa-caret-right" aria-hidden="true" onclick="next()" style="padding-left: 14px !important;"></i>
+        <i class="switch fa fa-caret-right" aria-hidden="true" onclick="next()"
+            style="padding-left: 14px !important;"></i>
+    </div>
+    <div class="contact">
+        <h2> contact us </h2>
+        <div class="container">
+            <form action="/action_page.php">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+          
+              <label for="country">Country</label>
+              <select id="country" name="country">
+                <option value="australia">Australia</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+              </select>
+          
+              <label for="subject">Subject</label>
+              <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+          
+              <input type="submit" value="Submit">
+            </form>
+          </div>
     </div>
     <footer style="padding: 30px;">
         <div class="flex">

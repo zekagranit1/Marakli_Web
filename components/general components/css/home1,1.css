@@ -16,12 +16,96 @@
  body{
      overflow-x: hidden;
  }
+
+ /* ============= navbar ================ */
+ #navbar {
+  overflow: hidden;
+  background-color: #f1f1f1;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+}
+
+#navbar a {
+  float: left;
+  
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 70px;
+}
+
+#navbar #logo-pic{
+    transition: 0.4s;
+    float: left;
+    height: 70px;
+}
+
+#navbar #logo {
+    margin-top: auto;
+    margin-bottom: auto;
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+#navbar a:hover {
+  transition: 0.4s;
+
+  background-color: #fcfcfc70;
+  color: black;
+}
+
+#navbar a.active {
+  transition: 0.4s;
+
+  background-color: rgb(30, 255, 199);
+  color: white;
+}
+
+#navbar-right {
+  float: right;
+  margin-right: 50px;
+}
+#nav-holder{
+    transition: 0.4s;
+    margin-top: 12px;
+}
+.active{
+  font-size: 25px !important;
+}
+
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 20px 10px !important;
+  }
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  #navbar-right {
+    float: none;
+    /* margin-left: -100px; */
+  }
+}
+
  /* ------ paralex ---------------- */
- .flexRow{
-   display: flex;
-   flex-direction: row;
-   justify-content:space-evenly;
- }
+ .buttons{
+   position: sticky;
+   top: 0;
+   right: 0;
+ } 
 .main{
     width:100%;
   

@@ -20,6 +20,7 @@ $(window).on("scroll touchmove", function()
    if ($(document).scrollTop() >= ($("#cave").position().top )) 
    {
     $('body').css('background-image', 'none')
+    
 
    };
 
@@ -33,6 +34,24 @@ function myFunction() {
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   var scrolled = (winScroll / height) * 150;
   document.getElementById("myBar").style.width = scrolled + "%";
+
+// nav bar scroll
+var active = document.getElementsByClassName('active')
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").style.padding = "5px 5px";
+    document.getElementById("navbar").style.background = "#f1f1f1b4";
+    document.getElementById("logo").style.fontSize = "25px";
+    document.getElementById("logo-pic").style.height = "50px";
+    document.getElementById("nav-holder").style.marginTop = "0";
+    active[0].style.fontSize = '18px'
+} else {
+    document.getElementById("navbar").style.padding = "20px 20px";
+    document.getElementById("navbar").style.background = "#f1f1f1";
+    document.getElementById("logo").style.fontSize = "35px";
+    document.getElementById("logo-pic").style.height = "70px";
+    document.getElementById("nav-holder").style.marginTop = "12px";
+    active[0].style.fontSize = '25px'
+  }
 }
 
 // qita okd osht per slider te teamit
