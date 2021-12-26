@@ -1,6 +1,5 @@
 @font-face {
-    font-family: rockwell;
-    src: url(../../../font/rockwell/ROCK.TTF);
+    font-family: Bison;
     src: url(../../../font/Bison/Bison.ttf);
 }
 
@@ -13,7 +12,7 @@
     margin: 0;
     padding: 0;
     /* overflow-x: hidden; */
-    font-family: rockwell;
+    font-family: Bison;
     letter-spacing: 2px;
 }
 
