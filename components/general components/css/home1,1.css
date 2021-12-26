@@ -21,7 +21,7 @@
 .main{
     width:100%;
 
-    background-image:url('../../../photos/babadimrat.jpg');
+    /* background-image:url('../../../photos/babadimrat.jpg'); */
     background-size:100% 100%;
     background-attachment:fixed;
     transition: 1000ms;
@@ -44,9 +44,7 @@ section{
 #terrain{
   z-index: -1;
     width: 100%;
-    background: rgba(0,0,0,0.5);
-    box-shadow: -15px -15px 48px 46px rgba(0,0,0,0.5);
-    /* box-shadow: 0px -78px 83px 40px rgba(0,0,0,0.49); */
+   
 }
 #cave{
     width: 100%;
@@ -85,8 +83,8 @@ section{
           float: left;
       }
       #biker{
-        height:80px;
-        margin-top: -132px;
+        height:105px;
+        margin-top: -155px;
 
       }
 
