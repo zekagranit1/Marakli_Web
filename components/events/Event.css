@@ -3,6 +3,13 @@
     --blue: #0E49B5;
     --green: #54E346;
 }
+@font-face {
+    font-family: Bison;
+    src: url(../../font/Bison/Bison.ttf);
+}
+*{
+    font-family: Bison;
+}
 
 /* ============= navbar ================ */
 
@@ -104,7 +111,7 @@ body {
     padding: 0px;
 }
 .main{
-    font-family: "Lato", sans-serif;
+    /* font-family: "Lato", sans-serif; */
     background-color: white;
     overflow-x: hidden;
     margin: 50px 50px 50px 50px;
