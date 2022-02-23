@@ -336,11 +336,13 @@ body {
     transform: translateY(0);
   } */
 
-  /* footer */
-  footer {
+
+/* footer */
+
+footer {
     text-align: center;
     padding: 3px;
-    background-color: rgb(43, 126, 94);
+    background-color: var(--blue);
     color: white;
 }
 
@@ -354,9 +356,9 @@ ul li {
     list-style: none;
     margin-bottom: 5px;
 }
-ul{
-    padding: 0;
 
+ul {
+    padding: 0;
 }
 
 a {

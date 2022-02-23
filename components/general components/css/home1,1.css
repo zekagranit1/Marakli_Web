@@ -134,20 +134,24 @@ section {
     margin-top: 10%;
     color: white;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.562);
+    text-shadow: 2px 2px 5px black;
     /* background: rgba(128, 128, 128, 0.171); */
     /* filter: blur(1); */
 }
 
-.Join-us{
+.Join-us {
     text-align: center;
 }
-.Join-us h2{
+
+.Join-us h2 {
     font-size: 30px;
 }
-.Join-us h1{
-    font-size:5vw; 
+
+.Join-us h1 {
+    font-size: 5vw;
 }
-.Join-us button{
+
+.Join-us button {
     border: none;
     font-size: 24px;
     background: #54E346;
@@ -158,11 +162,14 @@ section {
     padding-right: 30px;
     transition: 0.5s;
 }
-.Join-us button:hover{
+
+.Join-us button:hover {
     background: #3fdf31;
     transition: 0.5s;
     transform: translateY(-5px);
 }
+
+
 /* ------ paralex end ---------------- */
 
 #terrain {
@@ -277,7 +284,7 @@ section {
 footer {
     text-align: center;
     padding: 3px;
-    background-color: rgb(43, 126, 94);
+    background-color: var(--blue);
     color: white;
 }
 
@@ -480,6 +487,8 @@ i:hover {
     color: #4CAF50!important;
     background: white!important;
 }
+
+
 /* contact */
 
 input[type=text],
@@ -497,7 +506,7 @@ textarea {
 }
 
 input[type=submit] {
-    background-color: #04AA6D;
+    background-color: var(--blue);
     color: white;
     padding: 12px 20px;
     border: none;
@@ -510,12 +519,12 @@ input[type=submit]:hover {
 }
 
 .container {
-
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
 }
-.contact{
+
+.contact {
     margin-left: auto;
     margin-right: auto;
     width: 70%;
