@@ -12,7 +12,9 @@
 </head>
 
 <body>
-    <div id="navbar">
+    <?php include 'C:\xampp\htdocs\Marakli_Web\components\general components\navbar.php'
+    ?>
+    <!-- <div id="navbar">
         <div id="nav-holder">
             <a href="#default" id="logo">Marakli T'Biciklave</a>
             <div id="navbar-right">
@@ -20,11 +22,11 @@
                 <a class="link" href="../events/Eventet.html">Eventet</a>
                 <a class="link" href="../shop/shop.html">Shop</a>
                 <!-- <div>||</div> -->
-                <a class="link" href="../profile/Login.html">Log in</a>
+                <!-- <a class="link" href="../profile/Login.html">Log in</a>
                 <a class="active" href="../profile/Sign up.html">Join Us</a>
             </div>
         </div>
-    </div>
+    </div> --> -->
     <div class="main">
     
     
