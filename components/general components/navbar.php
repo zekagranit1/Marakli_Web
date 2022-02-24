@@ -13,12 +13,12 @@
         <div id="nav-holder">
             <a href="#default" id="logo">Marakli T'Biciklave</a>
             <div id="navbar-right">
-                <a class="link" href="../general components/home1,1.html">Home</a>
-                <a class="link" href="../events/Eventet.html">Eventet</a>
-                <a class="link" href="../shop/shop.html">Shop</a>
+                <a class="link" href="./index.php">Home</a>
+                <a class="link" href="../events/Eventet.php">Eventet</a>
+                <a class="link" href="../shop/shop.php">Shop</a>
                 <!-- <div>||</div> -->
-                <a class="link" href="../profile/Login.html">Log in</a>
-                <a class="active" href="../profile/Sign up.html">Join Us</a>
+                <a class="link" href="../profile/Login.php">Log in</a>
+                <a class="active" href="../profile/Sign up.php">Join Us</a>
             </div>
         </div>
     </div>

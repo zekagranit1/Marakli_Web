@@ -22,11 +22,11 @@
         <div id="nav-holder">
             <a href="#default" id="logo">Marakli T'Biciklave</a>
             <div id="navbar-right">
-                <a class="link" href="../general components/home1,1.html">Home</a>
-                <a class="link" href="../events/Eventet.html">Eventet</a>
-                <a class="link" href="../shop/shop.html">Shop</a>
+                <a class="link" href="../general components/index.php">Home</a>
+                <a class="link" href="../events/Eventet.php">Eventet</a>
+                <a class="link" href="../shop/shop.php">Shop</a>
                 <a href='../profile/Sign up.html' class="active link" href="#">Join Us</a>
-                <a class="link" href="../profile/Login.html">login</a>
+                <a class="link" href="../profile/Login.php">login</a>
             </div>
         </div>
     </div>
@@ -262,37 +262,10 @@
             </form>
         </div>
     </div>
-    <footer style="padding: 30px;">
-        <div class="flex">
-            <div>
-                <h4 style="margin-bottom: 20px;">contact</h4>
-                <ul>
-                    <li>email@email.com</li>
-                    <li>049123123</li>
-                    <li>+38349321312</li>
-                </ul>
-            </div>
-            <div>
-                <h4 style="margin-bottom: 20px;">Quick links</h4>
-                <ul>
-                    <li><a href="../events/Eventet.html">Events</a></li>
-                    <li><a href="../shop/shop.html">Shop</a></li>
-                    <li><a href="../general components/home1,1.html">Home</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 style="margin-bottom: 20px;">socials</h4>
-                <div style="margin-top: 30px;">
 
-                    <a href="#" class="fa fa-facebook"></a>
-                    <a href="#" class="fa fa-twitter"></a>
-                    <a href="#" class="fa fa-linkedin"></a>
-                    <a href="#" class="fa fa-instagram"></a>
-                </div>
-            </div>
-        </div>
-
-    </footer>
+    <?php
+        include './footer.php'
+    ?>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>

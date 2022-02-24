@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <?php include 'C:\xampp\htdocs\Marakli_Web\components\general components\navbar.php'
+    <?php include '..\general components\navbar.php'
     ?>
     <!-- <div id="navbar">
         <div id="nav-holder">
@@ -34,7 +34,9 @@
     <div class="container">
 
         <div class="eventet">
+            <div class="foto">
             <img class="upfoto " src="../../photos/28 nentori.jpg " alt=" ">
+            </div>
             <div class="text active ">
                 <h3>28 Nentori</h3>
                 <p class="ora ">ORA:15:00 / DATA:28.11.2021</p>
@@ -136,7 +138,9 @@
         </div>
     </div>
 </div>
-    <footer style="padding: 30px;">
+<?php include '..\general components\footer.php'
+?>
+    <!-- <footer style="padding: 30px;">
         <div class="flex">
             <div>
                 <h4 style="margin-bottom: 20px;">contact</h4>
@@ -166,7 +170,7 @@
             </div>
         </div>
 
-    </footer>
+    </footer> -->
     <script src="event.js "></script>
 </body>
 

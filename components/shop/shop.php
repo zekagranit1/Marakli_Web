@@ -12,7 +12,9 @@
 </head>
 
 <body>
-    <div id="navbar">
+<?php include '..\general components\navbar.php'
+    ?>
+    <!-- <div id="navbar">
         <div id="nav-holder">
             <a href="#default" id="logo">Marakli T'Biciklave</a>
             <div id="navbar-right">
@@ -20,11 +22,11 @@
                 <a class="link" href="../events/Eventet.html">Eventet</a>
                 <a class="link" href="../shop/shop.html">Shop</a>
                 <!-- <div>||</div> -->
-                <a class="link" href="../profile/Login.html">Log in</a>
+                <!-- <a class="link" href="../profile/Login.html">Log in</a>
                 <a class="active" href="../profile/Sign up.html">Join Us</a>
             </div>
         </div>
-    </div>
+    </div> --> -->
 
     <div class="welcom-div ">
         <div class="title">
@@ -213,7 +215,7 @@
     <button onclick="topFunction()" id="scrollToTopBtn" title="Go to top">☝️</button>
 
     <script src="./js/shop.js"></script>
-
+<!-- 
     <footer style="padding: 30px;">
         <div class="flex">
             <div>
@@ -244,8 +246,8 @@
             </div>
         </div>
 
-    </footer>
-
+    </footer> -->
+<?php include '..\general components\footer.php'?>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
