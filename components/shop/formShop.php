@@ -9,6 +9,6 @@
     <link rel="stylesheet" href="./css/">
 </head>
 <body>
-    <!-- pjese e fazes se dyte -->
+
 </body>
 </html>
