@@ -16,7 +16,7 @@ require_once '../../controllers/ShopControll.php';
 </head>
 
 <body>
-<?php include '..\general components\navbar.php'
+    <?php include '..\general components\navbar.php'
     ?>
     <!-- <div id="navbar">
         <div id="nav-holder">
@@ -26,7 +26,7 @@ require_once '../../controllers/ShopControll.php';
                 <a class="link" href="../events/Eventet.html">Eventet</a>
                 <a class="link" href="../shop/shop.html">Shop</a>
                 <!-- <div>||</div> -->
-                <!-- <a class="link" href="../profile/Login.html">Log in</a>
+    <!-- <a class="link" href="../profile/Login.html">Log in</a>
                 <a class="active" href="../profile/Sign up.html">Join Us</a>
             </div>
         </div>
@@ -42,153 +42,92 @@ require_once '../../controllers/ShopControll.php';
             <div class="filter"><a href="#section1">Rroba</a></div>
             <div class="filter"><a href="#section2">Aksesor</a></div>
             <div class="filter"><a href="#section3">Stikera</a></div>
-            <div class="filter"><a href="./shopAdd.php">add item</a></div>
+            <div class="filter"><a href="./shopAdd.php" style="background: blue;">add item</a></div>
         </div>
     </div>
     <div class="section" id="section1">
         <h2 class="section-head">RROBA</h2>
         <div class="wrap cloths">
 
-          <?php
-          $shop = new ShopControll;
-          $allItems = $shop->readData();
-          foreach($allItems as $item):
-          
-          ?>
-            <div class="cloths-item">
-                <img src="<?php echo $item['item_pic']; ?>" alt="no image">
-                <div class="text">
-                    <h2><?php echo $item['emri']; ?></h2>
-                    <h3><?php echo $item['cmimi']; ?></h3>
-                    <td ><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
-                    <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>
-                </div>
-            </div>
+            <?php
+            $shop = new ShopControll;
+            $allItems = $shop->readItem();
+            foreach ($allItems as $item) :
+                if ($item['category'] == 1) :
+            ?>
+                    <div class="cloths-item">
+                        <img src="<?php echo $item['item_pic']; ?>" alt="no image">
+                        <div class="text">
+                            <h2><?php echo $item['emri']; ?></h2>
+                            <h3><?php echo $item['cmimi']; ?></h3>
+                            <td><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
+                            <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>
+                        </div>
+                    </div>
 
-            <?php endforeach; ?>
-            
+            <?php
+                endif;
+            endforeach; ?>
+
 
         </div>
     </div>
     <div class="section" id="section2">
         <h2 class="section-head">AKSESOR</h2>
         <div class="wrap cloths">
-            <div class="cloths-item">
-                <img src="../../photos/akse1.jpg" alt="">
-                <div class="text">
-                    <h2>Qante</h2>
-                    <h3>12.00€</h3>
-                    <div class="colors row">
-                        <!-- <div class="blue"></div>
-                        <div class="red"></div>
-                        <div class="green"></div> -->
+            <?php
+            foreach ($allItems as $item) :
+                if ($item['category'] == 2) :
+            ?>
+                    <div class="cloths-item">
+                        <img src="<?php echo $item['item_pic']; ?>" alt="no image">
+                        <div class="text">
+                            <h2><?php echo $item['emri']; ?></h2>
+                            <h3><?php echo $item['cmimi']; ?></h3>
+                            <td><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
+                            <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="cloths-item">
-                <img src="../../photos/akse2.jpg" alt="">
-                <div class="text">
-                    <h2>Termos</h2>
-                    <h3>5.00€</h3>
-                    <div class="colors row">
-                        <!-- <div class="blue"></div>
-                        <div class="red"></div>
-                        <div class="green"></div> -->
-                    </div>
-                </div>
-            </div>
+            <?php
+                endif;
+            endforeach;
 
-            <div class="cloths-item">
-                <img src="../../photos/akse3.jpg" alt="">
-                <div class="text">
-                    <h2>Helmet</h2>
-                    <h3>20.00€</h3>
-                    <div class="colors row">
-                        <!-- <div class="blue"></div>
-                        <div class="red"></div>
-                        <div class="green"></div> -->
-                    </div>
-                </div>
-            </div>
+            ?>
 
-            <div class="cloths-item">
-                <img src="../../photos/akse4.jpg" alt="">
-                <div class="text">
-                    <h2>Pompe</h2>
-                    <h3>8.00€</h3>
-                    <div class="colors row">
-                        <!-- <div class="blue"></div>
-                        <div class="red"></div>
-                        <div class="green"></div> -->
-                    </div>
-                </div>
-            </div>
 
         </div>
     </div>
     <div class="section" id="section3">
         <h2 class="section-head">STIKERA</h2>
         <div class="wrap cloths">
-            <div class="cloths-item">
-                <img src="../../photos/logo2.png" alt="">
-                <div class="text">
-                    <h2>Stiker "Livines"</h2>
-                    <h3>0.50€</h3>
-                    <div class="colors row">
-                        <!-- <div class="blue"></div>
-                            <div class="red"></div>
-                            <div class="green"></div> -->
+            <?php
+            foreach ($allItems as $item) :
+                if ($item['category'] == 3) :
+            ?>
+                    <div class="cloths-item">
+                        <img src="<?php echo $item['item_pic']; ?>" alt="no image">
+                        <div class="text">
+                            <h2><?php echo $item['emri']; ?></h2>
+                            <h3><?php echo $item['cmimi']; ?></h3>
+                            <td><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
+                            <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="cloths-item">
-                <img src="../../photos/logo1.png" alt="">
-                <div class="text">
-                    <h2>Stiker "Anakonda"</h2>
-                    <h3>0.50€</h3>
-                    <div class="colors row">
-                        <!-- <div class="blue"></div>
-                            <div class="red"></div>
-                            <div class="green"></div> -->
-                    </div>
-                </div>
-            </div>
-            <div class="cloths-item">
-                <img src="../../photos/logo3.png" alt="">
-                <div class="text">
-                    <h2>Stiker "Buqe"</h2>
-                    <h3>0.50€</h3>
-                    <div class="colors row">
-                        <!-- <div class="blue"></div>
-                        <div class="red"></div>
-                        <div class="green"></div> -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="cloths-item">
-                <img src="../../photos/logo.png" alt="">
-                <div class="text">
-                    <h2>Stiker "Lovlov"</h2>
-                    <h3>0.50€</h3>
-                    <div class="colors row">
-                        <!-- <div class="blue"></div>
-                        <div class="red"></div>
-                        <div class="green"></div> -->
-                    </div>
-                </div>
-            </div>
-
+            <?php
+                endif;
+            endforeach; ?>
         </div>
+
+    </div>
 
     </div>
     <!-- Button on fixed on bottom right corner of the page -->
     <button onclick="topFunction()" id="scrollToTopBtn" title="Go to top">☝️</button>
 
     <script src="./js/shop.js"></script>
-<!-- 
+    <!-- 
     <footer style="padding: 30px;">
         <div class="flex">
             <div>
@@ -220,7 +159,7 @@ require_once '../../controllers/ShopControll.php';
         </div>
 
     </footer> -->
-<?php include '..\general components\footer.php'?>
+    <?php include '..\general components\footer.php' ?>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>

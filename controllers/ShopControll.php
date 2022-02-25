@@ -11,9 +11,14 @@ class ShopControll{
 
     //CRUD
 
-    public function readData(){
+    public function readItem(){
         $query = $this->db->pdo->query('SELECT * FROM item');
 
+        return $query->fetchAll();
+    }
+
+    public function readCat(){
+        $query = $this->db->pdo->query('SELECT * FROM item_cat');
         return $query->fetchAll();
     }
 
@@ -24,12 +29,13 @@ class ShopControll{
         else {
             $request['uploadfile']='../../photos/bg1.jpg';
         }
-        $query = $this->db->pdo->prepare('INSERT INTO item (item_pic, emri, cmimi)
-        VALUES (:item_pic, :emri, :cmimi)');
+        $query = $this->db->pdo->prepare('INSERT INTO item (item_pic, emri, cmimi, category)
+        VALUES (:item_pic, :emri, :cmimi, :category)');
 
         $query->bindParam(':item_pic', $request['uploadfile']);
         $query->bindParam(':emri', $request['emri']);
         $query->bindParam(':cmimi', $request['price']);
+        $query->bindParam(':category', $request['cat']);
         $query->execute();
 
         return header('Location: shop.php');
@@ -51,11 +57,12 @@ class ShopControll{
             $request['uploadfile']='../../photos/bg1.jpg';
         }
         $query = $this->db->pdo->prepare('UPDATE item SET item_pic = :item_pic,
-        emri = :emri, cmimi = :cmimi WHERE id = :id');
+        emri = :emri, cmimi = :cmimi, category = :category WHERE id = :id');
         $query->bindParam(':item_pic', $request['uploadfile']);
         $query->bindParam(':emri', $request['emri']);
         $query->bindParam(':cmimi', $request['price']);
         $query->bindParam(':id', $id);
+        $query->bindParam(':category', $request['cat']);
         $query->execute();
 
         return header('Location: shop.php');
