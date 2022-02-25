@@ -59,7 +59,19 @@ if (isset($_POST['submit'])) {
                     <input type="text" name="emri" id="emri" value="<?php echo $currItem['emri']; ?>">
 
                     <label for="price">Price:</label><br>
-                    <input type="number" name="price" id="price" min="0.00" max="1000.00" step="0.01" value="<?php echo $currItem['cmimi']; ?>"/>
+                    <input type="number" name="price" id="price" min="0.00" max="1000.00" step="0.01" value="<?php echo $currItem['cmimi']; ?>"/><br>
+
+                    <label for="cat">Choose a category:</label><br>
+                    <select name="cat" id="cat" value="<?php echo $currItem['category']; ?>">
+                        <?php 
+                        $shop = new ShopControll;
+                        $categories = $shop->readCat();
+
+                        foreach ($categories as $category):
+                        ?>
+                        <option value="<?php echo $category['id']; ?>"><?php echo $category['emri']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
 
                     <input type="submit" name="submit" value="Edit shop item!">
                 </div>
