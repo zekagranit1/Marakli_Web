@@ -8,6 +8,9 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="./css/shopAdd.css">
+    <link rel="stylesheet" href="../general components/css/navbar.css">
+    <link rel="stylesheet" href="../general components/css/footer.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 </head>
@@ -15,8 +18,9 @@
 <body>
 
 <!-- sdi pse spo bon  -->
-<?php include '..\general components\navbar.php'
-    ?>
+<?php include '..\general components\navbar.php';
+      
+?>
 
     <div class="main">
         <div class="intro">
