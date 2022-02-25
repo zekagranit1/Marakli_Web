@@ -2,13 +2,15 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="./css/login.css">
+
+    <link rel="stylesheet" href="./css/log_in.css">
     <script src="https://kit.fontawesome.com/de3305a7cd.js" crossorigin="anonymous"></script>
+   
     <title>Sign in</title>
 </head>
 
 <body>
-    
+
     <div class="container" id="container">
        
         <div class="form-container sign-in-container">
@@ -39,7 +41,7 @@
                     <h1>Hej, marakli</h1>
                     <p>Kliko - "Sign up" për tu bërë pjesë e grupit ma të qartë #Maraklit'biciklave</p>
                     
-                    <button class="ghost" onclick="window.location.href='../profile/Sign up.html'" id="signUp">Sign
+                    <button class="ghost" onclick="window.location.href='../profile/Sign up.php'" id="signUp">Sign
                         Up</button>
                         
                     </div>
