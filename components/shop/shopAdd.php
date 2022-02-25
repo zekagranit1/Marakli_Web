@@ -2,9 +2,9 @@
 require_once '../../controllers/ShopControll.php';
 
 $shop = new ShopControll;
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     $shop->insert($_POST);
-} 
+}
 
 
 ?>
@@ -45,21 +45,21 @@ if(isset($_POST['submit'])){
 
         <div class="shop_item">
 
-            
 
-                <!--  method="POST" -->
-                <form method="POST">
 
-                    <div class="foto">
+            <!--  method="POST" -->
+            <form method="POST">
 
-                        <div class="upload">
-                            <!-- <input type="file" class="custom-file-input" title=" ">  -->
-                            <input type="file" name="uploadfile" id="img" style="display:none;" />
-                            <label class="file-input" for="img">Click me to upload image</label>
-                        </div>
+                <div class="foto">
 
+                    <div class="upload">
+                        <!-- <input type="file" class="custom-file-input" title=" ">  -->
+                        <input type="file" name="uploadfile" id="img" style="display:none;" />
+                        <label class="file-input" for="img">Click me to upload image</label>
                     </div>
-                    <div class="container">
+
+                </div>
+                <div class="container">
                     <label for="emri">Emri:</label>
                     <input type="text" name="emri" id="emri">
                     <!-- 
@@ -70,12 +70,12 @@ if(isset($_POST['submit'])){
                     <input type="number" name="price" id="price" min="0.00" max="1000.00" step="0.01" />
 
                     <input type="submit" name="submit" value="Create shop item!">
-                    </div>
+                </div>
 
-                </form>
-            </div>
+            </form>
+        </div>
 
-    
+
 
     </div>
 

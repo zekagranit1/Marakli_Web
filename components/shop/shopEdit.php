@@ -1,3 +1,20 @@
+<?php
+require_once '../../controllers/ShopControll.php';
+
+// $itemId;
+if (isset($_GET['id'])) {
+    $itemId = $_GET['id'];
+}
+
+$shop = new ShopControll;
+$currItem = $shop->edit($itemId);
+
+if (isset($_POST['submit'])) {
+    $shop->update($_POST, $itemId);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,43 +35,38 @@
             <h1>Edit shop item</h1>
             <h2>This is where you can Edit the selected shop item</h2>
             <h4>to go back please click below</h4>
-            <button>click to go back</button>
+            <a href="./shop.php">click to go back</a>
         </div>
 
         <div class="shop_item">
-            <div class="foto">
-                <!-- <div>
 
-                    <h1 class="upload">+ Upload Image +</h1>
-                    <input id="inputFile" class="file-upload" type="file" accept="image/*" />
-                </div> -->
-                <div class="upload">
-                    <!-- <input type="file" class="custom-file-input" title=" ">  -->
-                    <input type="file" name="uploadfile" id="img" style="display:none;"/>
-                    <label class="file-input" for="img">Click me to upload image</label>
-                </div>
 
-            </div>
-            <div class="container">
 
             <!--  method="POST" -->
-                <form action="">
+            <form method="POST">
 
+                <div class="foto" style="background-image: url(<?php echo $currItem['item_pic']; ?>);">
+
+                    <div class="upload">
+                        <!-- <input type="file" class="custom-file-input" title=" ">  -->
+                        <input type="file" name="uploadfile" id="img" style="display:none;" value="<?php echo $currItem['item_pic']; ?>"/>
+                        <label class="file-input" for="img">Click me to upload image</label>
+                    </div>
+
+                </div>
+                <div class="container">
                     <label for="emri">Emri:</label>
-                    <input type="text" name="emri" id="emri">
-
-                    <label for="desc">Description:</label>
-                    <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
+                    <input type="text" name="emri" id="emri" value="<?php echo $currItem['emri']; ?>">
 
                     <label for="price">Price:</label><br>
-                    <input type="number" name="price" id="price" min="0.00" max="1000.00" step="0.01" />
+                    <input type="number" name="price" id="price" min="0.00" max="1000.00" step="0.01" value="<?php echo $currItem['cmimi']; ?>"/>
 
-                    <input type="submit" value="Edit this shop item!">
+                    <input type="submit" name="submit" value="Edit shop item!">
+                </div>
 
-                </form>
-            </div>
-
+            </form>
         </div>
+
 
     </div>
 

@@ -1,3 +1,7 @@
+<?php
+require_once '../../controllers/ShopControll.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,62 +42,31 @@
             <div class="filter"><a href="#section1">Rroba</a></div>
             <div class="filter"><a href="#section2">Aksesor</a></div>
             <div class="filter"><a href="#section3">Stikera</a></div>
+            <div class="filter"><a href="./shopAdd.php">add item</a></div>
         </div>
     </div>
     <div class="section" id="section1">
         <h2 class="section-head">RROBA</h2>
         <div class="wrap cloths">
+
+          <?php
+          $shop = new ShopControll;
+          $allItems = $shop->readData();
+          foreach($allItems as $item):
+          
+          ?>
             <div class="cloths-item">
-                <img src="../../photos/shirt3.jpg" alt="">
+                <img src="<?php echo $item['item_pic']; ?>" alt="no image">
                 <div class="text">
-                    <h2>Bluz per meshkuj</h2>
-                    <h3>15.00€</h3>
-                    <div class="colors row">
-                        <!-- <div class="blue"></div>
-                        <div class="red"></div>
-                        <div class="green"></div> -->
-                    </div>
+                    <h2><?php echo $item['emri']; ?></h2>
+                    <h3><?php echo $item['cmimi']; ?></h3>
+                    <td ><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
+                    <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>
                 </div>
             </div>
 
-            <div class="cloths-item">
-                <img src="../../photos/shirt.jpg" alt="">
-                <div class="text">
-                    <h2>Bluz per meshkuj</h2>
-                    <h3>15.00€</h3>
-                    <div class="colors row">
-                        <!-- <div class="blue"></div>
-                        <div class="red"></div>
-                        <div class="green"></div> -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="cloths-item">
-                <img src="../../photos/shirt1.jpg" alt="">
-                <div class="text">
-                    <h2>Bluz per meshkuj</h2>
-                    <h3>15.00€</h3>
-                    <div class="colors row">
-                        <!-- <div class="blue"></div>
-                        <div class="red"></div>
-                        <div class="green"></div> -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="cloths-item">
-                <img src="../../photos/shirt2.jpg" alt="">
-                <div class="text">
-                    <h2>Bluz per meshkuj</h2>
-                    <h3>15.00€</h3>
-                    <div class="colors row">
-                        <!-- <div class="blue"></div>
-                        <div class="red"></div>
-                        <div class="green"></div> -->
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
+            
 
         </div>
     </div>
