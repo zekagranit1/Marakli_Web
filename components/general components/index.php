@@ -27,6 +27,7 @@
                 <a class="link" href="../shop/shop.php">Shop</a>
                 <a href='../profile/Sign up.html' class="active link" href="#">Join Us</a>
                 <a class="link" href="../profile/Login.php">login</a>
+                <a class="link" href="../profile/profile.php">Profile</a>
             </div>
         </div>
     </div>

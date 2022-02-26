@@ -26,8 +26,8 @@ class UserControll{
         // INSERT INTO user ( Emri, Mbiemri, Mosha, Address_, Email, Password_, Is_admin) 
         // VALUES ( 'easf', 'ase', '12', 'esaf', 'fase', 'ase', '0');
 
-        $query = $this->db->pdo->prepare('INSERT INTO user (Emri,Mbiemri,Mosha,Adresa,Email,Pass)
-        VALUES (:Emri, :Mbiemri, :Mosha, :Adresa,:Email,:Pass)');
+        $query = $this->db->pdo->prepare('INSERT INTO user (Emri,Mbiemri,Mosha,Adresa,Email,Pass,Is_admin)
+        VALUES (:Emri, :Mbiemri, :Mosha, :Adresa,:Email,:Pass, 0 )');
 
         $query->bindParam(':Emri', $request['emri']);
         $query->bindParam(':Mbiemri', $request['mbiemri']);

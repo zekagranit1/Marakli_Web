@@ -1,3 +1,8 @@
+<?php 
+session_start();
+echo $_SESSION['emri'];
+$baba = $_SESSION['emri'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +28,7 @@
                     <a href="#" class="fa fa-linkedin"></a>
                 </div>
                 <div class="text">
-                    <h2>filan fisteku</h2>
+                    <h2><?php echo $_SESSION['emri']." ".$_SESSION['mbiemri'];?></h2>
                     <div class="kilometrat">
                         <h3>Kilometrat me marakli: 15km</h3>
                     </div>

@@ -1,9 +1,8 @@
 <?php
 
 session_start();
-require '../controllers/UserControll.php';
-$dhenat=new UserControll();
-$all=$dhenat->readPerson();
+require '../../controllers/UserControll.php';
+
 
 
 if(isset($_POST['login'])){
@@ -14,11 +13,11 @@ if(isset($_POST['login'])){
     $password = $_POST['password'];
 
     if(validateEmptyData($email,$password)){
-        header("Location: login.php");
+        header("Location: Login.php");
     } else if(vlaidateData($email,$password)){
-        header("Location: main.php");
+        header("Location: ../general components/index.php");
     } else {
-        header("Location: login.php");
+        header("Location: Login.php");
     }
 
 }
@@ -31,11 +30,15 @@ function validateEmptyData($email, $password){
 }
 
 function vlaidateData($email,$password){
-    global $allUsers;
+    $dhenat = new UserControll();
+    $allUsers = $dhenat->readPerson();
     foreach($allUsers as $user){
-        if($user['email']==$email && $user['password']==$password){
-            $_SESSION['is_admin'] = $user['is_admin'];
-            $_SESSION['emri'] = $user['emri'];
+        if($user['Email']===$email && $user['Pass']===$password){
+            $_SESSION['is_admin'] = $user['Is_admin'];
+            $_SESSION['emri'] = $user['Emri'];
+            $_SESSION['mbiemri'] = $user['Mbiemri'];
+            $_SESSION['mosha'] = $user['Mosha'];
+            $_SESSION['email'] = $user['Email'];
             return true;
         }
     }
