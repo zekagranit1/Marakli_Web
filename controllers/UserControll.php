@@ -12,43 +12,48 @@ class UserControll{
     //CRUD
 
     public function readPerson(){
-        $query = $this->db->pdo->query('SELECT * FROM personi');
+        $query = $this->db->pdo->query('SELECT * FROM user');
 
         return $query->fetchAll();
     }
 
-    public function insert($request){
+    public function add($request){
 
-        echo "<script>
-        alert('Te dhenat jane ruajtur me sukses');
-        document.location='Sign Up.php';
-        </script>";
-        // INSERT INTO `personi` ( `Emri`, `Mbiemri`, `Mosha`, `Address`, `Email`, `Password_`, `Is_admin`) 
+        // echo "<script>
+        // alert('Te dhenat jane ruajtur me sukses');
+        // document.location='Sign Up.php';
+        // </script>";
+        // INSERT INTO user ( Emri, Mbiemri, Mosha, Address_, Email, Password_, Is_admin) 
         // VALUES ( 'easf', 'ase', '12', 'esaf', 'fase', 'ase', '0');
 
-        $query = $this->db->pdo->prepare('INSERT INTO personi (Emri,Mbiemri,Mosha,Adresa,Email,Password_,Is_admin)
-        VALUES (:Emri, :Mbiemri, :Mosha, :Adresa, :Email, :Password_, 1)');
+        $query = $this->db->pdo->prepare('INSERT INTO user (Emri,Mbiemri,Mosha,Adresa,Email,Pass)
+        VALUES (:Emri, :Mbiemri, :Mosha, :Adresa,:Email,:Pass)');
 
         $query->bindParam(':Emri', $request['emri']);
         $query->bindParam(':Mbiemri', $request['mbiemri']);
         $query->bindParam(':Mosha', $request['mosha']);
         $query->bindParam(':Adresa', $request['adresa']);
         $query->bindParam(':Email', $request['email']);
-        $query->bindParam(':password_', $request['password']);
+        $query->bindParam(':Pass', $request['password']);
         // $query->bindParam(':Is_admin', FALSE);
         $query->execute();
 
-        // return header('Location: Sign Up.php');
+        return header('Location: login.php');
 
-      
+        
     }
 
-    // public function comparePass($password, $konfirimi){
-    //     if (strcmp($password,$konfirimi)){
-    //         return true;
-    //     }
-    //     return false;
-    // }
+    public function comparePass($password, $konfirimi,$request){
+        if (!strcmp($password,$konfirimi)){
+            $this->add($request);
+        }
+        else{
+        echo "<script>
+        alert('GABIM shkruani passin dhe verifikimin sakt');
+        document.location='Sign Up.php';
+        </script>";
+        }
+    }
 
 }
 ?>

@@ -1,4 +1,4 @@
-<?php
+<!-- 
 // require_once('Personi.php');
 // if (isset($_POST['register'])){
 // $regj= new Personi();
@@ -10,13 +10,14 @@
 // $regj->setPassword($_POST['password']);
 
 // $regj->insertoDhenat();
-// }
-
+// } -->
+<?php
 require_once '../../controllers/UserControll.php';
 
 $users = new UserControll;
 if (isset($_POST['submit'])) {
-    $users->insert($_POST);
+    // $users->add($_POST);
+    $users->comparePass($_POST['password'],$_POST['konfirm'],$_POST);
 }
 
 ?>
@@ -26,6 +27,7 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="utf-8">
     <title>Sign Up</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/sign_up.css">
 </head>
@@ -34,7 +36,7 @@ if (isset($_POST['submit'])) {
 
     <div class="wrapper" style="background-color:white;">
         <div class="inner">
-            <form action="" method="POST">
+            <form method="POST">
                 <h1 style="font-family: 'Montserrat', sans-serif; margin: 10px 0px;">Regjistrohu | <a href="./Login.php"> Log in</a></h1>
                 <div class="form-group"></div>
                 <div class="form-wrapper">
@@ -56,12 +58,12 @@ if (isset($_POST['submit'])) {
                 <div class="form-group">
                     <div class="form-wrapper">
                         <label for="">Password:</label>
-                        <input name="password" type="password" class="form-control" placeholder="password">
+                        <input name="password" type="text" class="form-control" placeholder="password">
                     </div>
-                    <!-- <div class="form-wrapper">
+                    <div class="form-wrapper">
                         <label for="">Konfirmo Password:</label>
-                        <input name="konfirm" type="password" class="form-control" placeholder="confirm">
-                    </div> -->
+                        <input name="konfirm" type="text" class="form-control" placeholder="confirm">
+                    </div>
                 </div>
                 <div class="form-group form-width">
                     <div class="form-wrapper">
