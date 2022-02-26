@@ -1,3 +1,6 @@
+<?php
+require_once("constants.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +19,7 @@
             <div class="dropdown">
                 <button id = "activate" class="dropbtn">Dropdown</button>
                  <div class="dropdown-content">
-                <a class="link" href="./index.php">Home</a>
+                <a class="link" href="<?=APP_URL?>\components\general components\index.php">Home</a>
                 <a class="link" href="../events/Eventet.php">Eventet</a>
                 <a class="link" href="../shop/shop.php">Shop</a>
                 <a class="link" href="../profile/Login.php">Log in</a>
