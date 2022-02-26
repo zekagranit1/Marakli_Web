@@ -24,10 +24,10 @@
                             class="fab fa-linkedin-in"></i></a>
                         </div>
                         <span>or use your account</span>
-                        <input id="email" type="email" placeholder="Email" />
-                        <input id="pass" type="password" placeholder="Password" />
+                        <input name="email" type="email" placeholder="Email" />
+                        <input name="password" type="password" placeholder="Password" />
                 <a href="#">Forgot your password?</a>
-                <button id="sign" onclick="validation()">Sign In</button>
+                <button name="signin" onclick="validation()">Sign In</button>
             </form>
         </div>
         <div class="overlay-container">
@@ -35,7 +35,7 @@
                 <div class="overlay-panel overlay-left">
                     <h1>Welcome Back</h1>
                     <p>To keep connected with us please login with your personal info</p>
-                    <button class="ghost" id="signIn">Sign In</button>
+                    <button class="ghost" name="login" id="signIn">Sign In</button>
                 </div>
                 <div class="overlay-panel overlay-right">
                     <h1>Hej, marakli</h1>
