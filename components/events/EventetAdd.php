@@ -19,6 +19,7 @@ if (isset($_POST['submit'])) {
 
     <link rel="stylesheet" href="./css/EventetAdd.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="./js/eventadd.js"></script>
 
 </head>
 
@@ -42,8 +43,8 @@ if (isset($_POST['submit'])) {
                 <div class="foto">
                     <div class="upload">
                         <!-- <input type="file" class="custom-file-input" title=" ">  -->
-                        <input type="file" name="uploadfile" id="img" style="display:none;" />
-                        <label class="file-input" for="img">Click me to upload image</label>
+                        <input type="file" name="uploadfile" id="img" style="display:none;" onchange="changeName()"/>
+                        <label class="file-input" for="img" id="change">Click me to upload image</label>
                     </div>
 
                 </div>

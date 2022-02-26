@@ -6,7 +6,8 @@ $regj->setEmri($_POST['emri']);
 $regj->setMbiemri($_POST['mbiemri']);
 $regj->setMosha($_POST['mosha']);
 $regj->setEmail($_POST['email']);
-$regj->setPassword($_POST['adresa']);
+$regj->setAdresa($_POST['adresa']);
+$regj->setPassword($_POST['password']);
 
 $regj->insertoDhenat();
 }

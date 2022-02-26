@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+use ShopControll as GlobalShopControll;
+
 require_once '../../databaze/Database.php';
 
 class ShopControll{
@@ -23,11 +26,13 @@ class ShopControll{
     }
 
     public function insert($request){
-        if ($request['uploadfile']!=' ') {
+
+        $randint = rand(1,4);
+        if ($request['uploadfile']!=null) {
             $request['uploadfile']='../../photos/' .$request['uploadfile'];
         }
         else {
-            $request['uploadfile']='../../photos/bg1.jpg';
+            $request['uploadfile']='../../photos/default.jpg';
         }
         $query = $this->db->pdo->prepare('INSERT INTO item (item_pic, emri, cmimi, category)
         VALUES (:item_pic, :emri, :cmimi, :category)');
@@ -49,12 +54,13 @@ class ShopControll{
         return $query->fetch();
     }
 
-    public function update($request, $id){
-        if ($request['uploadfile']!=' ') {
+    public function update($request, $id, $foto){
+        
+        if ($request['uploadfile']!=null) {
             $request['uploadfile']='../../photos/' .$request['uploadfile'];
         }
-        else {
-            $request['uploadfile']='../../photos/bg1.jpg';
+        else{
+            $request['uploadfile']= $foto;
         }
         $query = $this->db->pdo->prepare('UPDATE item SET item_pic = :item_pic,
         emri = :emri, cmimi = :cmimi, category = :category WHERE id = :id');

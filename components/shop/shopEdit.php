@@ -10,7 +10,7 @@ $shop = new ShopControll;
 $currItem = $shop->edit($itemId);
 
 if (isset($_POST['submit'])) {
-    $shop->update($_POST, $itemId);
+    $shop->update($_POST, $itemId, $currItem['item_pic']);
 }
 
 ?>
@@ -26,7 +26,8 @@ if (isset($_POST['submit'])) {
 
     <link rel="stylesheet" href="./css/shopAdd.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+    <script src="./js/shopAdd.js"></script>
+    
 </head>
 
 <body>
@@ -49,8 +50,8 @@ if (isset($_POST['submit'])) {
 
                     <div class="upload">
                         <!-- <input type="file" class="custom-file-input" title=" ">  -->
-                        <input type="file" name="uploadfile" id="img" style="display:none;" value="<?php echo $currItem['item_pic']; ?>"/>
-                        <label class="file-input" for="img">Click me to upload image</label>
+                        <input type="file" name="uploadfile" id="img" style="display:none;" value="<?php echo $currItem['item_pic']; ?>" onchange="changeName()"/>
+                        <label class="file-input" for="img" id="change">Click me to upload image</label>
                     </div>
 
                 </div>
