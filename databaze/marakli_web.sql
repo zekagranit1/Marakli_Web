@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 25, 2022 at 10:45 PM
+-- Generation Time: Feb 26, 2022 at 08:25 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -30,10 +30,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `events` (
   `ID` int(11) NOT NULL,
   `Emri_eventit` varchar(255) NOT NULL,
-  `Data` datetime NOT NULL,
-  `Description` text NOT NULL,
+  `Data_e` datetime NOT NULL,
+  `Description_e` text NOT NULL,
   `Foto_eventi` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`ID`, `Emri_eventit`, `Data_e`, `Description_e`, `Foto_eventi`) VALUES
+(4, 'Granit', '2022-02-04 15:22:00', 'aswefasef', '../../photos/28n.jpg'),
+(6, 'event41', '2022-02-25 15:25:00', 'eafsefaseeafasefsasf\r\nafsefase\r\nfa\r\nsef\r\na\r\n\r\nasefaesefasef', '../../photos/main1.jpg'),
+(7, 'event1', '2022-02-27 15:26:00', 'eqwrfwefw', '../../photos/bg1.jpg'),
+(8, 'event412', '2022-03-03 15:27:00', 'saefasefaef ase asecfas', '../../photos/bg3.jpg'),
+(10, '28 nentori', '2022-02-26 16:34:00', '28 nentori ', '../../photos/28 nentori.jpg');
 
 -- --------------------------------------------------------
 
@@ -45,26 +56,67 @@ CREATE TABLE `item` (
   `id` int(11) NOT NULL,
   `item_pic` varchar(255) NOT NULL DEFAULT '../../photos/bg1.jpg',
   `emri` varchar(255) NOT NULL,
-  `cmimi` int(11) NOT NULL
+  `cmimi` int(11) NOT NULL,
+  `category` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `item`
+--
+
+INSERT INTO `item` (`id`, `item_pic`, `emri`, `cmimi`, `category`) VALUES
+(22, '../../photos/shirt.jpg', 'item nr 1', 12, 1),
+(23, '../../photos/akse4.jpg', 'item nr 2', 32, 2),
+(24, '../../photos/akse3.jpg', 'item nr 6', 12, 2),
+(25, '../../photos/default.jpg', 'item nr 1', 12, 1),
+(26, '../../photos/logo.png', 'item nr 1', 12, 3),
+(27, '../../photos/logo2.png', 'item nr 444', 32, 1),
+(28, '../../photos/default.jpg', 'saerfasefasef', 12, 3),
+(29, '../../photos/8 marsi.jpg', '', 0, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personi`
+-- Table structure for table `item_cat`
 --
 
-CREATE TABLE `personi` (
-  `ID` bigint(20) NOT NULL,
-  `Personi_ID` bigint(20) NOT NULL,
+CREATE TABLE `item_cat` (
+  `id` int(11) NOT NULL,
+  `emri` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `item_cat`
+--
+
+INSERT INTO `item_cat` (`id`, `emri`) VALUES
+(1, 'veshje\r\n'),
+(2, 'aksesor'),
+(3, 'stikera');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
   `Emri` varchar(255) NOT NULL,
   `Mbiemri` varchar(255) NOT NULL,
   `Mosha` int(11) NOT NULL,
-  `Address` varchar(255) NOT NULL,
+  `Adresa` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
-  `Password` varchar(255) NOT NULL,
-  `Is_admin` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='tabela e userave ';
+  `Pass` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `Emri`, `Mbiemri`, `Mosha`, `Adresa`, `Email`, `Pass`) VALUES
+(6, 'esfa', 'faes', 12, 'ase', 'zekagranit1@gmail.com', 'afse'),
+(12, 'Granit', 'zeka', 19, 'prishtin', 'zekagranit1@gmail.com', '123');
 
 --
 -- Indexes for dumped tables
@@ -83,10 +135,16 @@ ALTER TABLE `item`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `personi`
+-- Indexes for table `item_cat`
 --
-ALTER TABLE `personi`
-  ADD PRIMARY KEY (`ID`);
+ALTER TABLE `item_cat`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -96,19 +154,25 @@ ALTER TABLE `personi`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT for table `personi`
+-- AUTO_INCREMENT for table `item_cat`
 --
-ALTER TABLE `personi`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `item_cat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
