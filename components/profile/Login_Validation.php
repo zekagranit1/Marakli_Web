@@ -15,7 +15,7 @@ if(isset($_POST['login'])){
     if(validateEmptyData($email,$password)){
         header("Location: Login.php");
     } else if(vlaidateData($email,$password)){
-        header("Location: ../general components/index.php");
+        header("Location: ../general components/index.php?id=".$_SESSION['id']);
     } else {
         header("Location: Login.php");
     }
@@ -39,6 +39,7 @@ function vlaidateData($email,$password){
             $_SESSION['mbiemri'] = $user['Mbiemri'];
             $_SESSION['mosha'] = $user['Mosha'];
             $_SESSION['email'] = $user['Email'];
+            $_SESSION['id'] = $user['id'];
             return true;
         }
     }
