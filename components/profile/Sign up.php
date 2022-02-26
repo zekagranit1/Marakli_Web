@@ -1,16 +1,24 @@
 <?php
-require_once('Personi.php');
-if (isset($_POST['register'])){
-$regj= new Personi();
-$regj->setEmri($_POST['emri']);
-$regj->setMbiemri($_POST['mbiemri']);
-$regj->setMosha($_POST['mosha']);
-$regj->setEmail($_POST['email']);
-$regj->setAdresa($_POST['adresa']);
-$regj->setPassword($_POST['password']);
+// require_once('Personi.php');
+// if (isset($_POST['register'])){
+// $regj= new Personi();
+// $regj->setEmri($_POST['emri']);
+// $regj->setMbiemri($_POST['mbiemri']);
+// $regj->setMosha($_POST['mosha']);
+// $regj->setEmail($_POST['email']);
+// $regj->setAdresa($_POST['adresa']);
+// $regj->setPassword($_POST['password']);
 
-$regj->insertoDhenat();
+// $regj->insertoDhenat();
+// }
+
+require_once '../../controllers/UserControll.php';
+
+$users = new UserControll;
+if (isset($_POST['submit'])) {
+    $users->insert($_POST);
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,17 +58,17 @@ $regj->insertoDhenat();
                         <label for="">Password:</label>
                         <input name="password" type="password" class="form-control" placeholder="password">
                     </div>
-                    <div class="form-wrapper">
+                    <!-- <div class="form-wrapper">
                         <label for="">Konfirmo Password:</label>
                         <input name="konfirm" type="password" class="form-control" placeholder="confirm">
-                    </div>
+                    </div> -->
                 </div>
                 <div class="form-group form-width">
                     <div class="form-wrapper">
                         <label for="">Mosha:</label>
                         <input name="mosha" type="number" class="mosha form-control" placeholder="">
                     </div>
-                    <div class="form-wrapper gjinia">
+                    <!-- <div class="form-wrapper gjinia">
                         <label class="gjinia-margin" for="">Gjinia:</label>
                         <div class="check">
                             <input type="radio" name="gender">
@@ -68,10 +76,10 @@ $regj->insertoDhenat();
                             <input type="radio" name="gender">
                             <label class="radio" for="femer">Femër</label>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- <button id="register" onclick="validation()">Register Now</button> -->
-                <button type="submit" name="register">Register Now</button>
+                <button type="submit" name="submit">Register Now</button>
             </form>
         </div>
     </div>
