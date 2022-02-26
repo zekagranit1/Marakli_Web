@@ -1,5 +1,8 @@
 <?php
+
 require_once '../../controllers/ShopControll.php';
+session_start();
+$isAdmin = $_SESSION['is_admin'];
 ?>
 
 <!DOCTYPE html>
@@ -60,8 +63,10 @@ require_once '../../controllers/ShopControll.php';
                         <div class="text">
                             <h2><?php echo $item['emri']; ?></h2>
                             <h3><?php echo $item['cmimi']; ?></h3>
+                            <?php if ($isAdmin==1):?>
                             <td><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
                             <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>
+                            <?php endif;?>
                         </div>
                     </div>
 
@@ -84,8 +89,10 @@ require_once '../../controllers/ShopControll.php';
                         <div class="text">
                             <h2><?php echo $item['emri']; ?></h2>
                             <h3><?php echo $item['cmimi']; ?></h3>
+                            <?php if ($isAdmin==1):?>
                             <td><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
                             <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>
+                            <?php endif;?>
                         </div>
                     </div>
 
@@ -110,8 +117,10 @@ require_once '../../controllers/ShopControll.php';
                         <div class="text">
                             <h2><?php echo $item['emri']; ?></h2>
                             <h3><?php echo $item['cmimi']; ?></h3>
+                            <?php if ($isAdmin==1):?>
                             <td><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
                             <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>
+                            <?php endif;?>
                         </div>
                     </div>
 

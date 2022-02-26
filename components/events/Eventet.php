@@ -54,8 +54,10 @@ require_once '../../controllers/eventControll.php';
                             <p class="ora "><?php echo $event['Data_e']; ?></p>
                             <button>Going</button>
                             <p class="read ">Hold to read more</p>
+                            <?php if ($isAdmin==1):?>
                             <td><a href="EventetEdit.php?ID=<?php echo $event['ID']; ?>" >EDIT</a></td>  
                             <td><a href="EventetDel.php?ID=<?php echo $event['ID']; ?>" style="color: red;">DELETE</a></td>
+                            <?php endif;?>
                             <!-- <div class="overlay">
 
                                 <p class="description ">
@@ -85,8 +87,10 @@ require_once '../../controllers/eventControll.php';
                             <p class="ora ">ORA dhe data:</p>
                             <p class="ora "><?php echo $event['Data_e']; ?></p>
                             <button id="review">Review</button>
+                            <?php if ($isAdmin==1):?>
                             <td><a href="EventetEdit.php?ID=<?php echo $event['ID']; ?>" >EDIT</a></td>  
                             <td><a href="EventetDel.php?ID=<?php echo $event['ID']; ?>" style="color: red;">DELETE</a></td>
+                            <?php endif;?>
                             <!-- <div class="overlay">
 
                                 <p class="description ">
