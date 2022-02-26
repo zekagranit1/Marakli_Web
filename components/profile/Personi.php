@@ -87,20 +87,15 @@ public function __construct($emri='',$mbiemri='',$adresa='',$email='',$password=
         }
         
         function insertoDhenat(){
-            $sql="INSERT INTO personi(Emri,Mbiemri,Mosha,Adresa,Email,Passwordi) VALUES (:Emri,:Mbiemri,:Mosha,:Adresa,:Email,:Passwordi)";
+            $sql="INSERT INTO personi(Emri,Mbiemri,Mosha,Adresa,Email,Passwordi) VALUES (?,?,?,?,?,?,?)";
             $stmt=$this->db->pdo->prepare($sql);
-            $stmt->bindParam(':Emri',$this->emri);
-            $stmt->bindParam(':Mbiemri',$this->mbiemri);
-            $stmt->bindParam(':Mosha',$this->mosha);
-            $stmt->bindParam(':Adresa',$this->adresa);
-            $stmt->bindParam(':Email',$this->email);
-            $stmt->bindParam(':Passwordi',$this->password);
+            $stmt->bindParam('ssssss',$this->emri,$this->mbiemri,$this->mosha,$this->adresa,$this->email,$this->password);
             $stmt->execute();
             echo "<script>
             alert('Te dhenat jane ruajtur me sukses');
             document.location='Sign Up.php';
             </script>";
-            
+            //perktheu dhe pershtati ne shqip Granit Zeka :)
         }
 
 
