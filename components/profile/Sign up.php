@@ -1,4 +1,16 @@
+<?php
+require_once('Personi.php');
+if (isset($_POST['register'])){
+$regj= new Personi();
+$regj->setEmri($_POST['emri']);
+$regj->setMbiemri($_POST['mbiemri']);
+$regj->setMosha($_POST['mosha']);
+$regj->setEmail($_POST['email']);
+$regj->setPassword($_POST['adresa']);
 
+$regj->insertoDhenat();
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -13,7 +25,7 @@
 
     <div class="wrapper" style="background-color:white;">
         <div class="inner">
-            <form action="" method="post">
+            <form action="" method="POST">
                 <h1 style="font-family: 'Montserrat', sans-serif; margin: 10px 0px;">Regjistrohu | <a href="./Login.php"> Log in</a></h1>
                 <div class="form-group"></div>
                 <div class="form-wrapper">
