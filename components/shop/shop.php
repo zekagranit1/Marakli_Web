@@ -23,7 +23,6 @@ $user = $_SESSION['id'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../general components/css/nav_bar.css">
     <script src="../general components/js/nav.js"></script>
-
 </head>
 
 <body>
@@ -35,7 +34,7 @@ $user = $_SESSION['id'];
         <div class="title">
 
             <h2>Marakli t'biciklave Shop</h2>
-            <p>Mire se vini ne shopin e Marakli'tbiciklave. Ketu mund te gjeni veshje,stikera dhe aksesor te personalizuar me logo te maraklive. Ndjehuni te sigurt te porositni ngase privatisia dhe prososia do jene te sigurta. </p>
+            <p>Mire se vini ne shopin e Marakli'tbiciklave. Ketu mund te gjeni veshje, stikera dhe aksesor te personalizuar me logo te maraklive. Ndjehuni te sigurt te porositni ngase privatisia dhe prososia do jene te sigurta.<p style="color:#b3b3b3">Blerjet do te shfaqen ne PROFIL<p> </p>
         </div>
         <div class=" filter-holder row">
             <div class="filter"><a href="#section1">Rroba</a></div>
@@ -71,8 +70,7 @@ $user = $_SESSION['id'];
                                 echo $_POST['blej'] = null;
                             }
                             ?>
-                                    
-                                    
+
                                     <form method="POST">
                                         <input class="bini" type="submit" name="blej" value="blej">
                                         <input type="text" name="tekst" value="<?php echo $item['id']; ?>" style="display: none;">
