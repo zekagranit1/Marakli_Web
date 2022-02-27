@@ -82,6 +82,19 @@ class ShopControll{
         return header("Location: shop.php");
     }
 
+    public function insertBlerje($USER,$ITEM){
+
+        //INSERT INTO `blerjet` (`id`, `Item_ID`, `User_ID`) VALUES (NULL, '', '');
+        $query = $this->db->pdo->prepare('INSERT INTO blerjet (Item_ID, User_ID_)
+        VALUES (:Item_ID, :User_ID_)');
+
+        $query->bindParam(':Item_ID', $ITEM);
+        $query->bindParam(':User_ID_', $USER);
+        $query->execute();
+
+        return header('Location: shop.php');
+    }
+
 }
 
 ?>
