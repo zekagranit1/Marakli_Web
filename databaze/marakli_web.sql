@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2022 at 12:37 PM
+-- Generation Time: Feb 27, 2022 at 09:57 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -30,8 +30,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `blerjet` (
   `id` int(11) NOT NULL,
   `Item_ID` int(11) NOT NULL,
-  `User_ID` int(11) NOT NULL
+  `User_ID_` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `blerjet`
+--
+
+INSERT INTO `blerjet` (`id`, `Item_ID`, `User_ID_`) VALUES
+(319, 22, 18),
+(320, 23, 18),
+(321, 25, 18);
 
 -- --------------------------------------------------------
 
@@ -56,7 +65,9 @@ INSERT INTO `events` (`ID`, `Emri_eventit`, `Data_e`, `Description_e`, `Foto_eve
 (6, 'event41', '2022-02-25 15:25:00', 'eafsefaseeafasefsasf\r\nafsefase\r\nfa\r\nsef\r\na\r\n\r\nasefaesefasef', '../../photos/main1.jpg'),
 (7, 'event1', '2022-02-27 15:26:00', 'eqwrfwefw', '../../photos/bg1.jpg'),
 (8, 'event412', '2022-03-03 15:27:00', 'saefasefaef ase asecfas', '../../photos/bg3.jpg'),
-(10, '28 nentori', '2022-02-26 16:34:00', '28 nentori ', '../../photos/28 nentori.jpg');
+(10, '28 nentori', '2022-02-26 16:34:00', '28 nentori ', '../../photos/28 nentori.jpg'),
+(11, 'kancer', '2022-03-04 19:47:00', 'dita e kancerit', '../../photos/4 shkurt.jpg'),
+(12, 'Granit', '2022-02-27 21:45:00', 'faserf', '../../photos/bg2.jpg');
 
 -- --------------------------------------------------------
 
@@ -79,7 +90,6 @@ CREATE TABLE `item` (
 INSERT INTO `item` (`id`, `item_pic`, `emri`, `cmimi`, `category`) VALUES
 (22, '../../photos/shirt.jpg', 'item nr 1', 12, 1),
 (23, '../../photos/akse4.jpg', 'item nr 2', 32, 2),
-(24, '../../photos/akse3.jpg', 'item nr 6', 12, 2),
 (25, '../../photos/akse2.jpg', 'item nr 1', 12, 2),
 (26, '../../photos/logo.png', 'item nr 1', 12, 3),
 (27, '../../photos/logo2.png', 'item nr 444', 32, 3),
@@ -140,8 +150,16 @@ INSERT INTO `user` (`id`, `Emri`, `Mbiemri`, `Mosha`, `Adresa`, `Email`, `Pass`,
 CREATE TABLE `vizitat` (
   `id` int(11) NOT NULL,
   `Event_ID` int(11) NOT NULL,
-  `User_ID` int(11) NOT NULL
+  `User_ID_` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `vizitat`
+--
+
+INSERT INTO `vizitat` (`id`, `Event_ID`, `User_ID_`) VALUES
+(4, 8, 18),
+(5, 12, 18);
 
 --
 -- Indexes for dumped tables
@@ -191,13 +209,13 @@ ALTER TABLE `vizitat`
 -- AUTO_INCREMENT for table `blerjet`
 --
 ALTER TABLE `blerjet`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=322;
 
 --
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `item`
@@ -221,7 +239,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `vizitat`
 --
 ALTER TABLE `vizitat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
