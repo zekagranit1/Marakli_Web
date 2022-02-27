@@ -1,9 +1,16 @@
-<?php 
+<?php
+
+require_once '../../controllers/ProfileControll.php';
 session_start();
-echo $_SESSION['is_admin'];
+// echo $_SESSION['is_admin'];
+$id_user = $_SESSION['id'];
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,16 +18,17 @@ echo $_SESSION['is_admin'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
     <!-- <script src="./js/"></script> -->
-    
+
     <link rel="stylesheet" href="../general components/css/nav_bar.css">
     <script src="../general components/js/nav.js"></script>
     <link rel="stylesheet" href="./css/profile.css">
 
 </head>
+
 <body style=" margin-top: 80px;">
-<?php include '..\general components\navbar.php';
-?>
-    <div class="main row" >
+    <?php include '..\general components\navbar.php';
+    ?>
+    <div class="main row">
         <div class="profile column">
             <div class="profile-part">
 
@@ -33,7 +41,7 @@ echo $_SESSION['is_admin'];
                     <a href="#" class="fa fa-linkedin"></a>
                 </div>
                 <div class="text">
-                    <h2><?php echo $_SESSION['emri']." ".$_SESSION['mbiemri'];?></h2>
+                    <h2><?php echo $_SESSION['emri'] . " " . $_SESSION['mbiemri']; ?></h2>
                     <div class="kilometrat">
                         <h3>Kilometrat me marakli: 15km</h3>
                     </div>
@@ -41,7 +49,7 @@ echo $_SESSION['is_admin'];
             </div>
             <div class="profile-part">
 
-                <div class="owned" >
+                <div class="owned">
                     <h3>Owned bikes:</h3>
                     <div class="bikes row">
                         <img src="../../photos/bike-prop.png" alt="">
@@ -62,33 +70,32 @@ echo $_SESSION['is_admin'];
 
                     </div>
                 </div>
-                
+
             </div>
             <div class="profile-part">
-
                 <div class="purchases">
                     <h3>Blerjet:</h3>
-                    <div class="product row">
-                        <img src="../../photos/shoping-bag.png" alt="">
-                        <div class="prod">
-                            <h3>name: product 1</h3>
-                            <h4>price: 15$</h4>
-                        </div>
-                    </div>
-                    <div class="product row">
-                        <img src="../../photos/shoping-bag.png" alt="">
-                        <div class="prod">
-                            <h3>name: product 1</h3>
-                            <h4>price: 15$</h4>
-                        </div>
-                    </div>
-                    <div class="product row">
-                        <img src="../../photos/shoping-bag.png" alt="">
-                        <div class="prod">
-                            <h3>name: product 1</h3>
-                            <h4>price: 15$</h4>
-                        </div>
-                    </div>
+
+                    <?php
+                    $personi = new ProfileControll();
+                    $allBlerje = $personi->readBlerje($id_user);
+
+                    foreach ($allBlerje as $blerja) :
+
+                        $currItem = $personi->getItem($blerja['Item_ID']);
+                        // foreach ($allItems as $item) :
+                        //     $currItem = $personi->getItem($item['id']);
+
+                    ?>
+                            <div class="product row">
+                                <img src="../../photos/shoping-bag.png" alt="">
+                                <div class="prod">
+                                    <h3>name: <?php echo $currItem['emri'] ?></h3>
+                                    <h4>price: <?php echo $currItem['cmimi']; ?> $</h4>
+                                </div>
+                            </div>
+                    <?php endforeach;
+                    // endforeach; ?>
                 </div>
             </div>
         </div>
@@ -100,32 +107,32 @@ echo $_SESSION['is_admin'];
             <div class="events-holder column">
                 <div class="event-card row">
                     <img src="../../photos/8 marsi.jpg.jpg" alt="">
-                    <div class="info"> 
+                    <div class="info">
                         <h2>hello event</h2>
                         <h3>event cat</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                             Inventore, similique ratione earum doloremque laborum quia voluptas
-                             non iure, odio aliquam quam soluta? Totam nostrum, possimus veritatis beatae animi vero voluptate.</p>
+                            Inventore, similique ratione earum doloremque laborum quia voluptas
+                            non iure, odio aliquam quam soluta? Totam nostrum, possimus veritatis beatae animi vero voluptate.</p>
                     </div>
                 </div>
                 <div class="event-card row">
                     <img src="../../photos/prishtina_marakli.jpg" alt="">
-                    <div class="info"> 
+                    <div class="info">
                         <h2>hello event</h2>
                         <h3>event cat</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                             Inventore, similique ratione earum doloremque laborum quia voluptas
-                             non iure, odio aliquam quam soluta? Totam nostrum, possimus veritatis beatae animi vero voluptate.</p>
+                            Inventore, similique ratione earum doloremque laborum quia voluptas
+                            non iure, odio aliquam quam soluta? Totam nostrum, possimus veritatis beatae animi vero voluptate.</p>
                     </div>
                 </div>
                 <div class="event-card row">
                     <img src="../../photos/28n.jpg" alt="">
-                    <div class="info"> 
+                    <div class="info">
                         <h2>hello event</h2>
                         <h3>event cat</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                             Inventore, similique ratione earum doloremque laborum quia voluptas
-                             non iure, odio aliquam quam soluta? Totam nostrum, possimus veritatis beatae animi vero voluptate.</p>
+                            Inventore, similique ratione earum doloremque laborum quia voluptas
+                            non iure, odio aliquam quam soluta? Totam nostrum, possimus veritatis beatae animi vero voluptate.</p>
                     </div>
                 </div>
 
@@ -134,22 +141,22 @@ echo $_SESSION['is_admin'];
             <div class="events-holder column">
                 <div class="event-card row">
                     <img src="../../photos/prizren.jpg" alt="">
-                    <div class="info"> 
+                    <div class="info">
                         <h2>hello event</h2>
                         <h3>event cat</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                             Inventore, similique ratione earum doloremque laborum quia voluptas
-                             non iure, odio aliquam quam soluta? Totam nostrum, possimus veritatis beatae animi vero voluptate.</p>
+                            Inventore, similique ratione earum doloremque laborum quia voluptas
+                            non iure, odio aliquam quam soluta? Totam nostrum, possimus veritatis beatae animi vero voluptate.</p>
                     </div>
                 </div>
                 <div class="event-card row">
                     <img src="../../photos/peje.jpg" alt="">
-                    <div class="info"> 
+                    <div class="info">
                         <h2>hello event</h2>
                         <h3>event cat</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                             Inventore, similique ratione earum doloremque laborum quia voluptas
-                             non iure, odio aliquam quam soluta? Totam nostrum, possimus veritatis beatae animi vero voluptate.</p>
+                            Inventore, similique ratione earum doloremque laborum quia voluptas
+                            non iure, odio aliquam quam soluta? Totam nostrum, possimus veritatis beatae animi vero voluptate.</p>
                     </div>
                 </div>
 
@@ -157,4 +164,5 @@ echo $_SESSION['is_admin'];
         </div>
     </div>
 </body>
+
 </html>
