@@ -74,7 +74,7 @@ $user = $_SESSION['id'];
                                     
                                     
                                     <form method="POST">
-                                        <input type="submit" name="blej" value="<?php echo $item['id']; ?>">
+                                        <input class="bini" type="submit" name="blej" value="<?php echo $item['id']; ?>">
                                     </form>
                                     <?php endif; ?>
                             <?php if ($isAdmin == 1) : ?>
