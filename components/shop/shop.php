@@ -2,9 +2,23 @@
 
 require_once '../../controllers/ShopControll.php';
 session_start();
+$isAdmin = $_SESSION['is_admin'];
 
-       $isAdmin = $_SESSION['is_admin'];
-    
+// if (isset($_GET['id'])) {
+//     $itemId = $_GET['id'];
+//     // if ($this->itemId==$item['id']) {
+
+//     // }
+// }
+
+$log = $_SESSION['isLoged'];
+
+$user = $_SESSION['id'];
+// $itemx = null;
+// $itemy = null;
+// $itemz = null;
+// $useri = '';
+
 ?>
 
 <!DOCTYPE html>
@@ -61,6 +75,7 @@ session_start();
             <?php
             $shop = new ShopControll;
             $allItems = $shop->readItem();
+
             foreach ($allItems as $item) :
                 if ($item['category'] == 1) :
             ?>
@@ -70,30 +85,38 @@ session_start();
                             <h2><?php echo $item['emri']; ?></h2>
 
                             <h3><span><?php echo $item['cmimi'] . "€"; ?></span></h3>
-                            <?php
+                            
+                            <?php if ($log==true): ?>
+                            <?php 
                             if (isset($_POST['blej'])) {
-                                $shop->insertBlerje($_SESSION['id'], $item['id']);
+                                $shop->insertBlerje($user,$_POST['blej']);
+                                echo $_POST['blej'] = null;
                             }
                             ?>
-                            <form method="POST">
-                                <input type="submit" name="blej" value="blej">
-                            </form>
+                                    
+                                    
+                                    <form method="POST">
+                                        <input type="submit" name="blej" value="<?php echo $item['id']; ?>">
+                                    </form>
+                                    <?php endif; ?>
                             <?php if ($isAdmin == 1) : ?>
                                 <td><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
                                 <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>
                             <?php endif; ?>
                         </div>
                     </div>
-
-
-            <?php
+                    
+                    
+                    <?php
                 endif;
-            endforeach; ?>
+            endforeach;
+                
+                ?>
+            
 
 
 
         </div>
-    </div>
     <div class="section" id="section2">
         <h2 class="section-head">AKSESOR</h2>
         <div class="wrap cloths">
@@ -106,14 +129,19 @@ session_start();
                         <div class="text">
                             <h2><?php echo $item['emri']; ?></h2>
                             <h3><span><?php echo $item['cmimi'] . "€"; ?></span></h3>
-                            <?php
-                            if (isset($_POST['blej'])) {
-                                $shop->insertBlerje($_SESSION['id'], $item['id']);
+                            
+                            <?php if ($log==true): ?>
+                            <?php 
+                            if (isset($_POST['blej1'])) {
+                                $shop->insertBlerje($user,$_POST['blej1']);
+                                echo $_POST['blej1'] = null;
                             }
                             ?>
+
                             <form method="POST">
-                                <input type="submit" name="blej" value="blej">
+                                <input type="submit" name="blej1" value="<?php echo $item['id']; ?>">
                             </form>
+                            <?php endif; ?>
                             <?php if ($isAdmin == 1) : ?>
                                 <td><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
                                 <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>
@@ -124,7 +152,6 @@ session_start();
             <?php
                 endif;
             endforeach;
-
             ?>
 
 
@@ -142,14 +169,20 @@ session_start();
                         <div class="text">
                             <h2><?php echo $item['emri']; ?></h2>
                             <h3><span><?php echo $item['cmimi'] . "€"; ?></span></h3>
-                            <?php
-                            if (isset($_POST['blej'])) {
-                                $shop->insertBlerje($_SESSION['id'], $item['id']);
+                            
+                            <?php if ($log==true): ?>
+
+                            <?php 
+                            if (isset($_POST['blej2'])) {
+                                $shop->insertBlerje($user,$_POST['blej2']);
+                                echo $_POST['blej2'] = null;
                             }
                             ?>
                             <form method="POST">
-                                <input type="submit" name="blej" value="blej"> 
+                                <input type="submit" name="blej2" value="<?php echo $item['id']; ?>">
                             </form>
+                            <?php endif; ?>
+
                             <?php if ($isAdmin == 1) : ?>
                                 <td><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
                                 <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>
@@ -159,7 +192,8 @@ session_start();
 
             <?php
                 endif;
-            endforeach; ?>
+            endforeach; 
+            ?>
         </div>
 
     </div>

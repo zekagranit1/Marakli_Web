@@ -91,10 +91,14 @@ class ShopControll{
         $query->bindParam(':Item_ID', $ITEM);
         $query->bindParam(':User_ID_', $USER);
         $query->execute();
+        // $loc = 'shop.php?id='.$ITEM;
 
-        return header('Location: shop.php');
+        // return header('Location: '.$loc);
     }
 
+
 }
+
+
 
 ?>
