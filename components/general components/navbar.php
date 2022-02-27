@@ -1,5 +1,8 @@
 <?php
 require_once("constants.php");
+// require_once("constants.php");
+session_start();
+$_SESSION['isLoged'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,8 +26,15 @@ require_once("constants.php");
                 <a class="link" href="<?= APP_URL ?>\components\general components\index.php">Home</a>
                 <a class="link" href="../events/Eventet.php">Eventet</a>
                 <a class="link" href="../shop/shop.php">Shop</a>
-                <a class="link" href="../profile/Login.php">Log in</a>
-                <a class="active" href="../profile/Sign up.php">Join Us</a>
+                <?php if ($_SESSION['isLoged']): ?>
+                    <a class="link" href="../profile/profile.php"><?php echo $_SESSION['emri']." ".$_SESSION['mbiemri'];?></a>
+                    <a class="link" href="../profile/logout.php">Log out</a>
+                <?php endif ?>
+
+                <?php if (!$_SESSION['isLoged']): ?>
+                    <a class="link" href="../profile/Login.php">Log in</a>
+                    <a class="active" href="../profile/Sign up.php">Join Us</a>
+                <?php endif ?>
             </div>
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
         </div>

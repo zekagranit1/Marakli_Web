@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 26, 2022 at 08:25 PM
+-- Generation Time: Feb 27, 2022 at 02:38 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -70,9 +70,8 @@ INSERT INTO `item` (`id`, `item_pic`, `emri`, `cmimi`, `category`) VALUES
 (24, '../../photos/akse3.jpg', 'item nr 6', 12, 2),
 (25, '../../photos/default.jpg', 'item nr 1', 12, 1),
 (26, '../../photos/logo.png', 'item nr 1', 12, 3),
-(27, '../../photos/logo2.png', 'item nr 444', 32, 1),
-(28, '../../photos/default.jpg', 'saerfasefasef', 12, 3),
-(29, '../../photos/8 marsi.jpg', '', 0, 1);
+(27, '../../photos/logo2.png', 'item nr 444', 32, 3),
+(28, '../../photos/default.jpg', 'saerfasefasef', 12, 3);
 
 -- --------------------------------------------------------
 
@@ -107,16 +106,18 @@ CREATE TABLE `user` (
   `Mosha` int(11) NOT NULL,
   `Adresa` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
-  `Pass` varchar(255) NOT NULL
+  `Pass` varchar(255) NOT NULL,
+  `Is_admin` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `Emri`, `Mbiemri`, `Mosha`, `Adresa`, `Email`, `Pass`) VALUES
-(6, 'esfa', 'faes', 12, 'ase', 'zekagranit1@gmail.com', 'afse'),
-(12, 'Granit', 'zeka', 19, 'prishtin', 'zekagranit1@gmail.com', '123');
+INSERT INTO `user` (`id`, `Emri`, `Mbiemri`, `Mosha`, `Adresa`, `Email`, `Pass`, `Is_admin`) VALUES
+(18, 'Granit', 'zeka', 19, 'prishtin', 'zekagranit1@gmail.com', '123', 1),
+(19, 'albini', 'saraqi', 12, 'prsh', 'albinsaraqi@ubt-uni.net', 'abc', 1),
+(21, 'Granit', 'Zeka', 17, 'ase', 'zekagranit1@gmail', 'Graniti123', 0);
 
 --
 -- Indexes for dumped tables
@@ -160,7 +161,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `item_cat`
@@ -172,7 +173,7 @@ ALTER TABLE `item_cat`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

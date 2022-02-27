@@ -14,10 +14,13 @@ if(isset($_POST['login'])){
 
     if(validateEmptyData($email,$password)){
         header("Location: Login.php");
+        $_SESSION['isLoged']=false;
     } else if(vlaidateData($email,$password)){
         header("Location: ../general components/index.php?id=".$_SESSION['id']);
+        $_SESSION['isLoged']=true;
     } else {
         header("Location: Login.php");
+        $_SESSION['isLoged']=false;
     }
 
 }
