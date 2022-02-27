@@ -3,6 +3,7 @@
 require_once '../../controllers/ShopControll.php';
 session_start();
 $isAdmin = $_SESSION['is_admin'];
+
 ?>
 
 <!DOCTYPE html>
@@ -47,9 +48,9 @@ $isAdmin = $_SESSION['is_admin'];
             <div class="filter"><a href="#section1">Rroba</a></div>
             <div class="filter"><a href="#section2">Aksesor</a></div>
             <div class="filter"><a href="#section3">Stikera</a></div>
-            <?php if ($isAdmin==1):?>
-            <div class="filter"><a href="./shopAdd.php" style="background: blue;">add item</a></div>
-            <?php endif;?>
+            <?php if ($isAdmin == 1) : ?>
+                <div class="filter"><a href="./shopAdd.php" style="background: blue;">add item</a></div>
+            <?php endif; ?>
         </div>
     </div>
     <div class="section" id="section1">
@@ -66,17 +67,28 @@ $isAdmin = $_SESSION['is_admin'];
                         <img src="<?php echo $item['item_pic']; ?>" alt="no image">
                         <div class="text">
                             <h2><?php echo $item['emri']; ?></h2>
-                            <h3><span><?php echo $item['cmimi']."€"; ?></span></h3>
-                            <?php if ($isAdmin==1):?>
-                            <td><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
-                            <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>
-                            <?php endif;?>
+
+                            <h3><span><?php echo $item['cmimi'] . "€"; ?></span></h3>
+                            <?php
+                            if (isset($_POST['blej'])) {
+                                $shop->insertBlerje($_SESSION['id'], $item['id']);
+                            }
+                            ?>
+                            <form method="POST">
+                                <input type="submit" name="blej" value="blej">
+                            </form>
+                            <?php if ($isAdmin == 1) : ?>
+                                <td><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
+                                <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>
+                            <?php endif; ?>
                         </div>
                     </div>
+
 
             <?php
                 endif;
             endforeach; ?>
+
 
 
         </div>
@@ -92,11 +104,19 @@ $isAdmin = $_SESSION['is_admin'];
                         <img src="<?php echo $item['item_pic']; ?>" alt="no image">
                         <div class="text">
                             <h2><?php echo $item['emri']; ?></h2>
-                            <h3><span><?php echo $item['cmimi']."€"; ?></span></h3>
-                            <?php if ($isAdmin==1):?>
-                            <td><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
-                            <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>
-                            <?php endif;?>
+                            <h3><span><?php echo $item['cmimi'] . "€"; ?></span></h3>
+                            <?php
+                            if (isset($_POST['blej'])) {
+                                $shop->insertBlerje($_SESSION['id'], $item['id']);
+                            }
+                            ?>
+                            <form method="POST">
+                                <input type="submit" name="blej" value="blej">
+                            </form>
+                            <?php if ($isAdmin == 1) : ?>
+                                <td><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
+                                <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>
+                            <?php endif; ?>
                         </div>
                     </div>
 
@@ -120,11 +140,19 @@ $isAdmin = $_SESSION['is_admin'];
                         <img src="<?php echo $item['item_pic']; ?>" alt="no image">
                         <div class="text">
                             <h2><?php echo $item['emri']; ?></h2>
-                            <h3><span><?php echo $item['cmimi']."€"; ?></span></h3>
-                            <?php if ($isAdmin==1):?>
-                            <td><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
-                            <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>
-                            <?php endif;?>
+                            <h3><span><?php echo $item['cmimi'] . "€"; ?></span></h3>
+                            <?php
+                            if (isset($_POST['blej'])) {
+                                $shop->insertBlerje($_SESSION['id'], $item['id']);
+                            }
+                            ?>
+                            <form method="POST">
+                                <input type="submit" name="blej" value="blej"> 
+                            </form>
+                            <?php if ($isAdmin == 1) : ?>
+                                <td><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
+                                <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>
+                            <?php endif; ?>
                         </div>
                     </div>
 
