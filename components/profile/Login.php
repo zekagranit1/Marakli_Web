@@ -40,6 +40,7 @@
                     
                     <button class="ghost" onclick="window.location.href='../profile/Sign up.php'" id="signUp">Sign
                         Up</button>
+                    <a href="../general components/" style="color: white;">go back home</a>
                         
                     </div>
                 </div>

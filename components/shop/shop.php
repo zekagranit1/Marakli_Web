@@ -47,7 +47,9 @@ $isAdmin = $_SESSION['is_admin'];
             <div class="filter"><a href="#section1">Rroba</a></div>
             <div class="filter"><a href="#section2">Aksesor</a></div>
             <div class="filter"><a href="#section3">Stikera</a></div>
+            <?php if ($isAdmin==1):?>
             <div class="filter"><a href="./shopAdd.php" style="background: blue;">add item</a></div>
+            <?php endif;?>
         </div>
     </div>
     <div class="section" id="section1">
