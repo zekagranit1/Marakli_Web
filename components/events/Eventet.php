@@ -82,14 +82,16 @@ $user = $_SESSION['id'];
                                 <?php if ($log == true) : ?>
                                     <?php
                                     if (isset($_POST['vizito'])) {
-                                        $eventet->insertEvent($user, $_POST['vizito']);
+                                        $eventet->insertEvent($user, $_POST['tekst']);
                                         echo $_POST['vizito'] = null;
                                     }
                                     ?>
 
 
                                     <form method="POST">
-                                        <input type="submit" name="vizito" value="<?php echo $event['ID']; ?>">
+                                        <input type="submit" name="vizito" value="Going">
+                                        <input type="text" name="tekst" value="<?php echo $event['ID'];?>"style="display: none;">
+
                                     </form>
                                 <?php endif; ?>
                                 <p class="read">Hold picture to read more</p>
