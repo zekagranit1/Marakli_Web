@@ -1,5 +1,7 @@
 <?php
 require_once '../../controllers/eventControll.php';
+session_start();
+$isAdmin = $_SESSION['is_admin'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +13,8 @@ require_once '../../controllers/eventControll.php';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../general components/css/nav_bar.css">
+    <script src="../general components/js/nav.js"></script>
 
 </head>
 
@@ -52,7 +56,7 @@ require_once '../../controllers/eventControll.php';
                             <h3><?php echo $event['Emri_eventit']; ?></h3>
                             <p class="ora ">ORA dhe data:</p>
                             <p class="ora "><?php echo $event['Data_e']; ?></p>
-                            <button>Going</button>
+                            <button >Going</button>
                             <p class="read ">Hold to read more</p>
                             <?php if ($isAdmin==1):?>
                             <td><a href="EventetEdit.php?ID=<?php echo $event['ID']; ?>" >EDIT</a></td>  

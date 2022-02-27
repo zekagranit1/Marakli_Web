@@ -15,6 +15,9 @@ $isAdmin = $_SESSION['is_admin'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
     <link rel="stylesheet" href="./css/shop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../general components/css/nav_bar.css">
+    <script src="../general components/js/nav.js"></script>
 
 </head>
 
