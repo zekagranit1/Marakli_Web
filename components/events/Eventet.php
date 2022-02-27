@@ -21,6 +21,10 @@ $user = $_SESSION['id'];
     <link rel="stylesheet" href="../general components/css/nav_bar.css">
     <script src="../general components/js/nav.js"></script>
 
+
+    <style>
+        
+    </style>
 </head>
 
 <body>
