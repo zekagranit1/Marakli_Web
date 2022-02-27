@@ -1,5 +1,5 @@
 <?php
-// error_reporting(0);
+error_reporting(0);
 require_once '../../controllers/eventControll.php';
 session_start();
 $isAdmin = $_SESSION['is_admin'];
@@ -50,7 +50,7 @@ $user = $_SESSION['id'];
         <?php endif; ?>
         <div class="container">
 
-            <a>
+            
                 <?php
                 $eventet = new EventControll();
                 $events = $eventet->readEvent();
