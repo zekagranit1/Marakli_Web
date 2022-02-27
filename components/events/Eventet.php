@@ -1,9 +1,12 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 require_once '../../controllers/eventControll.php';
 session_start();
 $isAdmin = $_SESSION['is_admin'];
 
+$log = $_SESSION['isLoged'];
+
+$user = $_SESSION['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,54 +42,64 @@ $isAdmin = $_SESSION['is_admin'];
         </div>
     </div> -->
     <div class="main">
-    <?php?>   
+        <?php ?>
 
         <h1 class="nen_titull">Upcoming events </h1>
         <?php if ($isAdmin == 1) : ?>
-                                   <a href="EventetAdd.php?ID=<?php echo $event['ID']; ?>" style="font-size:25px  ; color:red"class="comand">      Create event</a>
-                            <?php endif; ?>
+            <a href="EventetAdd.php" style="font-size:25px  ; color:red" class="comand"> Create event</a>
+        <?php endif; ?>
         <div class="container">
-        
-        <a>
-            <?php
-            $eventet = new EventControll();
-            $events = $eventet->readEvent();
 
-            foreach ($events as $event) :
-                $randint = rand(1, 4);
-                if ($eventet->validEvent($event['Data_e'])) :
+            <a>
+                <?php
+                $eventet = new EventControll();
+                $events = $eventet->readEvent();
 
-            ?>
+                foreach ($events as $event) :
+                    $randint = rand(1, 4);
+                    if ($eventet->validEvent($event['Data_e'])) :
 
-                    <div class="eventet ">
-                        <div class="upfoto ">
-                            <img src="<?php echo $event['Foto_eventi']; ?>" alt="no image">
-                            <div class="overlay">
+                ?>
 
-                                <p class="description ">
-                                    <?php echo $event['Description_e']; ?>
+                        <div class="eventet ">
+                            <div class="upfoto ">
+                                <img src="<?php echo $event['Foto_eventi']; ?>" alt="no image">
+                                <div class="overlay">
+
+                                    <p class="description ">
+                                        <?php echo $event['Description_e']; ?>
+                                </div>
+                            </div>
+                            <div class="text ">
+                                <h3><?php echo $event['Emri_eventit']; ?></h3>
+                                <p class="ora ">Ora dhe data:</p>
+                                <p class="ora "><?php echo $event['Data_e']; ?></p>
+
+                                <?php if ($log == true) : ?>
+                                    <?php
+                                    if (isset($_POST['vizito'])) {
+                                        $eventet->insertEvent($user, $_POST['vizito']);
+                                        echo $_POST['vizito'] = null;
+                                    }
+                                    ?>
+
+
+                                    <form method="POST">
+                                        <input type="submit" name="vizito" value="<?php echo $event['ID']; ?>">
+                                    </form>
+                                <?php endif; ?>
+                                <p class="read">Hold picture to read more</p>
+                                <?php if ($isAdmin == 1) : ?>
+                                    <td><a href="EventetEdit.php?ID=<?php echo $event['ID']; ?>" class="comand">EDIT</a></td>
+                                    <td><a href="EventetDel.php?ID=<?php echo $event['ID']; ?>" class="comand" style="color: red;">DELETE</a></td>
+                                <?php endif; ?>
+
                             </div>
                         </div>
-                        <div class="text ">
-                            <h3><?php echo $event['Emri_eventit']; ?></h3>
-                            <p class="ora ">Ora dhe data:</p>
-                            <p class="ora "><?php echo $event['Data_e']; ?></p>
-                            <?php  $_SESSION['superhero'] = $event['ID'];?>  
-                            <form action="Event_Validation.php" method="post"> 
-                            <button onclick="window.location.href='Event_Validation.php'" name="<?php $event['ID']?>" type="submit">Going</button>
-                            </form>
-                            <p class="read">Hold picture to read more</p>
-                            <?php if ($isAdmin == 1) : ?>
-                                <td><a href="EventetEdit.php?ID=<?php echo $event['ID']; ?>" class="comand">EDIT</a></td>
-                                <td><a href="EventetDel.php?ID=<?php echo $event['ID']; ?>" class="comand" style="color: red;">DELETE</a></td>
-                            <?php endif; ?>
-
-                        </div>
-                    </div>
-            <?php
-                endif;
-            endforeach;
-            ?>
+                <?php
+                    endif;
+                endforeach;
+                ?>
 
         </div>
         <h1 class="nen_titull">Past events</h1>
@@ -136,7 +149,7 @@ $isAdmin = $_SESSION['is_admin'];
 
     <?php include '..\general components\footer.php'
     ?>
-    
+
     <script src="event.js "></script>
 </body>
 

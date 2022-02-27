@@ -35,8 +35,8 @@ require_once("constants.php");
                 <a class="link" href="../events/Eventet.php">Eventet</a>
                 <a class="link" href="../shop/shop.php">Shop</a>
                 <!-- <?php if ($_SESSION['isLoged']): ?> -->
-                    <a class="link" href="../profile/profile.php"><?php if ($_SESSION['isLoged']){ echo $_SESSION['emri']." ".$_SESSION['mbiemri'];} ?></a>
                     <a class="link" href="../profile/logout.php">Log out</a>
+                    <a class="link" href="../profile/profile.php" ><?php if ($_SESSION['isLoged']){ echo $_SESSION['emri']." ".$_SESSION['mbiemri'];} ?></a>
                 <!-- <?php else: ?> -->
                     <a class="link" href="../profile/Login.php">Log in</a>
                     <a class="active" href="../profile/Sign up.php">Join Us</a>

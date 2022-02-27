@@ -93,4 +93,15 @@ class EventControll
         return $realDate;
     }
 
+    public function insertEvent($USER,$EVENT){
+
+        $query = $this->db->pdo->prepare('INSERT INTO vizitat (Event_ID, User_ID_)
+        VALUES (:Event_ID, :User_ID_)');
+
+        $query->bindParam(':Event_ID', $EVENT);
+        $query->bindParam(':User_ID_', $USER);
+        $query->execute();
+
+    }
+
 }
