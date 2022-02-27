@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2022 at 09:57 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 7.3.27
+-- Generation Time: Feb 27, 2022 at 11:23 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,7 +40,8 @@ CREATE TABLE `blerjet` (
 INSERT INTO `blerjet` (`id`, `Item_ID`, `User_ID_`) VALUES
 (319, 22, 18),
 (320, 23, 18),
-(321, 25, 18);
+(321, 25, 18),
+(322, 36, 2);
 
 -- --------------------------------------------------------
 
@@ -61,13 +62,10 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`ID`, `Emri_eventit`, `Data_e`, `Description_e`, `Foto_eventi`) VALUES
-(4, 'Granit', '2022-02-04 15:22:00', 'aswefasef', '../../photos/28n.jpg'),
-(6, 'event41', '2022-02-25 15:25:00', 'eafsefaseeafasefsasf\r\nafsefase\r\nfa\r\nsef\r\na\r\n\r\nasefaesefasef', '../../photos/main1.jpg'),
-(7, 'event1', '2022-02-27 15:26:00', 'eqwrfwefw', '../../photos/bg1.jpg'),
-(8, 'event412', '2022-03-03 15:27:00', 'saefasefaef ase asecfas', '../../photos/bg3.jpg'),
-(10, '28 nentori', '2022-02-26 16:34:00', '28 nentori ', '../../photos/28 nentori.jpg'),
-(11, 'kancer', '2022-03-04 19:47:00', 'dita e kancerit', '../../photos/4 shkurt.jpg'),
-(12, 'Granit', '2022-02-27 21:45:00', 'faserf', '../../photos/bg2.jpg');
+(8, '8 marsi', '2022-03-03 15:27:00', 'Individi duhet detyrimisht te kete helmeten dhe pajisjet mbrojtes. Duhet te keni parasysh qe rrugtimi eshte i gjate andaj merrni ushqim, uje dhe te holla mjafstushem.', '../../photos/marsi.jpg'),
+(10, '28 nentori', '2022-02-26 16:34:00', 'Individi duhet detyrimisht te kete helmeten dhe pajisjet mbrojtes. Duhet te keni parasysh qe rrugtimi eshte i gjate andaj merrni ushqim, uje dhe te holla mjafstushem.', '../../photos/28 nentori.jpg'),
+(11, 'kanceri', '2022-03-04 19:47:00', 'Individi duhet detyrimisht te kete helmeten dhe pajisjet mbrojtes. Duhet te keni parasysh qe rrugtimi eshte i gjate andaj merrni ushqim, uje dhe te holla mjafstushem.', '../../photos/4 shkurt.jpg'),
+(12, 'Prizren', '2022-02-27 21:45:00', 'Individi duhet detyrimisht te kete helmeten dhe pajisjet mbrojtes. Duhet te keni parasysh qe rrugtimi eshte i gjate andaj merrni ushqim, uje dhe te holla mjafstushem.', '../../photos/prizren.jpg');
 
 -- --------------------------------------------------------
 
@@ -88,12 +86,16 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`id`, `item_pic`, `emri`, `cmimi`, `category`) VALUES
-(22, '../../photos/shirt.jpg', 'item nr 1', 12, 1),
-(23, '../../photos/akse4.jpg', 'item nr 2', 32, 2),
-(25, '../../photos/akse2.jpg', 'item nr 1', 12, 2),
-(26, '../../photos/logo.png', 'item nr 1', 12, 3),
-(27, '../../photos/logo2.png', 'item nr 444', 32, 3),
-(28, '../../photos/default.jpg', 'saerfasefasef', 12, 3);
+(26, '../../photos/logo.png', 'Stiker\"LovLov\"', 2, 3),
+(27, '../../photos/logo2.png', 'Stiker\"Livines\"', 1, 3),
+(31, '../../photos/logo1.png', 'Stiker\"Anakonda\"', 1, 3),
+(32, '../../photos/akse2.jpg', 'Termos', 5, 2),
+(33, '../../photos/akse3.jpg', 'Helmet', 22, 2),
+(34, '../../photos/akse4.jpg', 'Pompe', 7, 2),
+(35, '../../photos/shirt3.jpg', 'Bluze \" Marakli \"', 27, 1),
+(36, '../../photos/shirt.jpg', 'Bluze \" Marakli \"', 12, 1),
+(37, '../../photos/shirt1.jpg', 'Bluze \" Marakli \"', 25, 1),
+(38, '../../photos/shirt2.jpg', 'Bluze \" Marakli \"', 17, 1);
 
 -- --------------------------------------------------------
 
@@ -137,9 +139,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `Emri`, `Mbiemri`, `Mosha`, `Adresa`, `Email`, `Pass`, `Is_admin`) VALUES
-(18, 'Granit', 'zeka', 19, 'prishtin', 'zekagranit1@gmail.com', '123', 1),
-(19, 'albini', 'saraqi', 12, 'prsh', 'albinsaraqi@ubt-uni.net', 'abc', 1),
-(21, 'Granit', 'Zeka', 17, 'ase', 'zekagranit1@gmail', 'Graniti123', 0);
+(1, 'Granit', 'Zeka', 17, 'Ukraine', 'gz51982@ubt-uni.net', '123', 1),
+(2, 'Albin', 'Saraqi', 20, 'Dardania', 'as51465@ubt-uni.net', '123', 1),
+(18, 'Marakli', 'Web', 19, 'Peje', 'marakli_web@ubt-uni.net', '123', 0),
+(19, 'Blerina', 'Rrmoku', 12, 'Prishtine', 'blerina.rrmoku@ubt-uni.net', '123', 0);
 
 -- --------------------------------------------------------
 
@@ -159,7 +162,8 @@ CREATE TABLE `vizitat` (
 
 INSERT INTO `vizitat` (`id`, `Event_ID`, `User_ID_`) VALUES
 (4, 8, 18),
-(5, 12, 18);
+(5, 12, 18),
+(6, 8, 2);
 
 --
 -- Indexes for dumped tables
@@ -209,7 +213,7 @@ ALTER TABLE `vizitat`
 -- AUTO_INCREMENT for table `blerjet`
 --
 ALTER TABLE `blerjet`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=322;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=323;
 
 --
 -- AUTO_INCREMENT for table `events`
@@ -221,7 +225,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `item_cat`
@@ -233,13 +237,13 @@ ALTER TABLE `item_cat`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `vizitat`
 --
 ALTER TABLE `vizitat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
