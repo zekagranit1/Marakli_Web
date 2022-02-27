@@ -40,14 +40,14 @@ body {
 }
 
 
-/* .container {
+.container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     position: relative;
     flex-direction: row;
-} */
+}
 
 input {
     font-family: Bison;
@@ -75,12 +75,12 @@ input:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* position: relative; */
+    position: relative;
     flex-direction: row;
 }
 
 .eventet {
-    width: 18%;
+    /* width: 18%; */
     display: block;
     list-style: none;
     background-color: black;
