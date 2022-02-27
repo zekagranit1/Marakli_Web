@@ -273,9 +273,17 @@ body {
 }
 
 .text h3:hover {
-    background-color: var(--blue);
+    background-color: var(--green);
     color: white;
     border-radius: 20px;
+}
+
+.text h3:hover span {
+    display: none
+}
+
+.text h3:hover:before {
+    content: "Blej"
 }
 
 .colors {

@@ -11,9 +11,7 @@
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src='./js/index.js'></script>
 
-    <style>
-
-    </style>
+   <title>Home</title>
 </head>
 
 <body class='main'>

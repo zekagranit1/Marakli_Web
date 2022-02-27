@@ -12,7 +12,7 @@ $isAdmin = $_SESSION['is_admin'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shop</title>
     <link rel="stylesheet" href="./css/shop.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../general components/css/nav_bar.css">
@@ -64,7 +64,7 @@ $isAdmin = $_SESSION['is_admin'];
                         <img src="<?php echo $item['item_pic']; ?>" alt="no image">
                         <div class="text">
                             <h2><?php echo $item['emri']; ?></h2>
-                            <h3><?php echo $item['cmimi']; ?></h3>
+                            <h3><span><?php echo $item['cmimi']."€"; ?></span></h3>
                             <?php if ($isAdmin==1):?>
                             <td><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
                             <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>
@@ -90,7 +90,7 @@ $isAdmin = $_SESSION['is_admin'];
                         <img src="<?php echo $item['item_pic']; ?>" alt="no image">
                         <div class="text">
                             <h2><?php echo $item['emri']; ?></h2>
-                            <h3><?php echo $item['cmimi']; ?></h3>
+                            <h3><span><?php echo $item['cmimi']."€"; ?></span></h3>
                             <?php if ($isAdmin==1):?>
                             <td><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
                             <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>
@@ -118,7 +118,7 @@ $isAdmin = $_SESSION['is_admin'];
                         <img src="<?php echo $item['item_pic']; ?>" alt="no image">
                         <div class="text">
                             <h2><?php echo $item['emri']; ?></h2>
-                            <h3><?php echo $item['cmimi']; ?></h3>
+                            <h3><span><?php echo $item['cmimi']."€"; ?></span></h3>
                             <?php if ($isAdmin==1):?>
                             <td><a href="shopEdit.php?id=<?php echo $item['id']; ?>" style="color: black;">EDIT</a></td>
                             <td><a href="shopDel.php?id=<?php echo $item['id']; ?>" style="color: red;">DELETE</a></td>

@@ -1,5 +1,6 @@
 <?php 
 session_start();
+echo $_SESSION['is_admin'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
