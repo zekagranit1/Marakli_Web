@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2022 at 02:38 AM
+-- Generation Time: Feb 27, 2022 at 12:37 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -20,6 +20,18 @@ SET time_zone = "+00:00";
 --
 -- Database: `marakli_web`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blerjet`
+--
+
+CREATE TABLE `blerjet` (
+  `id` int(11) NOT NULL,
+  `Item_ID` int(11) NOT NULL,
+  `User_ID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -68,7 +80,7 @@ INSERT INTO `item` (`id`, `item_pic`, `emri`, `cmimi`, `category`) VALUES
 (22, '../../photos/shirt.jpg', 'item nr 1', 12, 1),
 (23, '../../photos/akse4.jpg', 'item nr 2', 32, 2),
 (24, '../../photos/akse3.jpg', 'item nr 6', 12, 2),
-(25, '../../photos/default.jpg', 'item nr 1', 12, 1),
+(25, '../../photos/akse2.jpg', 'item nr 1', 12, 2),
 (26, '../../photos/logo.png', 'item nr 1', 12, 3),
 (27, '../../photos/logo2.png', 'item nr 444', 32, 3),
 (28, '../../photos/default.jpg', 'saerfasefasef', 12, 3);
@@ -119,9 +131,27 @@ INSERT INTO `user` (`id`, `Emri`, `Mbiemri`, `Mosha`, `Adresa`, `Email`, `Pass`,
 (19, 'albini', 'saraqi', 12, 'prsh', 'albinsaraqi@ubt-uni.net', 'abc', 1),
 (21, 'Granit', 'Zeka', 17, 'ase', 'zekagranit1@gmail', 'Graniti123', 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vizitat`
+--
+
+CREATE TABLE `vizitat` (
+  `id` int(11) NOT NULL,
+  `Event_ID` int(11) NOT NULL,
+  `User_ID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `blerjet`
+--
+ALTER TABLE `blerjet`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `events`
@@ -148,8 +178,20 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `vizitat`
+--
+ALTER TABLE `vizitat`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `blerjet`
+--
+ALTER TABLE `blerjet`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `events`
@@ -174,6 +216,12 @@ ALTER TABLE `item_cat`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `vizitat`
+--
+ALTER TABLE `vizitat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
