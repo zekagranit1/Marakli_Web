@@ -17,7 +17,7 @@
        
         <div class="form-container sign-in-container">
             <form action="Login_Validation.php" method="POST">
-                <h1>Sign in</h1>
+                <h1>Log in<a class="signup_hide" href="./Sign up.php"> |  Sign Up</a></h1>
                 <div class="social-container">
                     <a href="#" class="social" onclick="href='https://www.facebook.com/'"><i
                         class="fab fa-facebook-f"></i></a>
@@ -28,8 +28,8 @@
                         <span>or use your account</span>
                         <input name="email" type="email" placeholder="Email" />
                         <input name="password" type="password" placeholder="Password" />
-                <a href="#">Forgot your password?</a>
-                <button name="login" onclick="validation()">Sign In</button>
+                <button class="login" name="login" onclick="validation()">Sign In</button>
+                <a class="backhome_hide" href="../general components/" >go back home</a>
             </form>
         </div>
         <div class="overlay-container">
