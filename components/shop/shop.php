@@ -2,7 +2,9 @@
 
 require_once '../../controllers/ShopControll.php';
 session_start();
-$isAdmin = $_SESSION['is_admin'];
+
+       $isAdmin = $_SESSION['is_admin'];
+    
 ?>
 
 <!DOCTYPE html>

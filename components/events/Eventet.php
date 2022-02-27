@@ -64,10 +64,10 @@ $isAdmin = $_SESSION['is_admin'];
                         </div>
                         <div class="text ">
                             <h3><?php echo $event['Emri_eventit']; ?></h3>
-                            <p class="ora ">ORA dhe data:</p>
+                            <p class="ora ">Ora dhe data:</p>
                             <p class="ora "><?php echo $event['Data_e']; ?></p>
                             <button>Going</button>
-                            <p class="read ">Hold picture to read more</p>
+                            <p class="read">Hold picture to read more</p>
                             <?php if ($isAdmin == 1) : ?>
                                 <td><a href="EventetEdit.php?ID=<?php echo $event['ID']; ?>" class="comand">EDIT</a></td>
                                 <td><a href="EventetDel.php?ID=<?php echo $event['ID']; ?>" class="comand" style="color: red;">DELETE</a></td>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 :root {
     --blue: #0E49B5;
     --green: #54E346;
@@ -12,7 +13,6 @@
 * {
     font-family: Bison;
 }
-
 
 body {
     margin: 0;
@@ -105,6 +105,7 @@ body {
     text-align: center;
 }
 
+
 /* #text {
     position: absolute;
     top: 50%;
@@ -141,8 +142,8 @@ img {
     width: 100%;
     z-index: 2;
 }
-.upfoto{
 
+.upfoto {
     height: 250px;
 }
 
@@ -163,10 +164,12 @@ img {
 .text p {
     margin: 0px 0px;
     opacity: 1;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
 }
 
 button {
-    background-color: var(--green);
+    background-color: var(--blue);
     border: none;
     color: white;
     padding: 8px 45px;
@@ -218,7 +221,6 @@ ul {
 a {
     text-decoration: none;
     color: white;
-
 }
 
 .fa {
@@ -238,6 +240,6 @@ a {
     border: 2px solid white;
 }
 
-.comand{
+.comand {
     padding-right: 5px;
 }
