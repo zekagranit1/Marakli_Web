@@ -67,14 +67,15 @@ $user = $_SESSION['id'];
                             <?php if ($log==true): ?>
                             <?php 
                             if (isset($_POST['blej'])) {
-                                $shop->insertBlerje($user,$_POST['blej']);
+                                $shop->insertBlerje($user,$_POST['tekst']);
                                 echo $_POST['blej'] = null;
                             }
                             ?>
                                     
                                     
                                     <form method="POST">
-                                        <input class="bini" type="submit" name="blej" value="<?php echo $item['id']; ?>">
+                                        <input class="bini" type="submit" name="blej" value="blej">
+                                        <input type="text" name="tekst" value="<?php echo $item['id']; ?>" style="display: none;">
                                     </form>
                                     <?php endif; ?>
                             <?php if ($isAdmin == 1) : ?>
@@ -111,13 +112,14 @@ $user = $_SESSION['id'];
                             <?php if ($log==true): ?>
                             <?php 
                             if (isset($_POST['blej1'])) {
-                                $shop->insertBlerje($user,$_POST['blej1']);
+                                $shop->insertBlerje($user,$_POST['tekst1']);
                                 echo $_POST['blej1'] = null;
                             }
                             ?>
 
                             <form method="POST">
-                                <input type="submit" name="blej1" value="<?php echo $item['id']; ?>">
+                                <input type="submit" name="blej1" value="blej">
+                                <input type="text" name="tekst1" value="<?php echo $item['id']; ?>" style="display: none;">
                             </form>
                             <?php endif; ?>
                             <?php if ($isAdmin == 1) : ?>
@@ -152,12 +154,14 @@ $user = $_SESSION['id'];
 
                             <?php 
                             if (isset($_POST['blej2'])) {
-                                $shop->insertBlerje($user,$_POST['blej2']);
+                                $shop->insertBlerje($user,$_POST['tekst2']);
                                 echo $_POST['blej2'] = null;
                             }
                             ?>
                             <form method="POST">
-                                <input type="submit" name="blej2" value="<?php echo $item['id']; ?>">
+                                <input type="submit" name="blej2" value="blej">
+                                <input type="text" name="tekst2" value="<?php echo $item['id']; ?>" style="display: none;">
+
                             </form>
                             <?php endif; ?>
 

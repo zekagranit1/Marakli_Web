@@ -1,10 +1,12 @@
 <?php
 
 require_once '../../controllers/ProfileControll.php';
+require_once '../../controllers/eventControll.php';
 session_start();
 // echo $_SESSION['is_admin'];
 $id_user = $_SESSION['id'];
 
+$eventet = new EventControll();
 
 
 ?>
@@ -16,7 +18,7 @@ $id_user = $_SESSION['id'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Document</title>
+    <title>Profile</title>
     <!-- <script src="./js/"></script> -->
 
     <link rel="stylesheet" href="../general components/css/nav_bar.css">
@@ -47,31 +49,7 @@ $id_user = $_SESSION['id'];
                     </div>
                 </div>
             </div>
-            <div class="profile-part">
-
-                <div class="owned">
-                    <h3>Owned bikes:</h3>
-                    <div class="bikes row">
-                        <img src="../../photos/bike-prop.png" alt="">
-                        <div class="bike">
-                            <h3>firma: mercedes</h3>
-                            <h4>ngjyra: i kuq</h4>
-                            <h4>rrota: 20inq</h4>
-                        </div>
-
-                    </div>
-                    <div class="bikes row">
-                        <img src="../../photos/bike-prop.png" alt="">
-                        <div class="bike">
-                            <h3>firma: mercedes</h3>
-                            <h4>ngjyra: i kuq</h4>
-                            <h4>rrota: 20inq</h4>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
+            
             <div class="profile-part">
                 <div class="purchases">
                     <h3>Blerjet:</h3>
@@ -81,17 +59,14 @@ $id_user = $_SESSION['id'];
                     $allBlerje = $personi->readBlerje($id_user);
 
                     foreach ($allBlerje as $blerja) :
-
+                        
                         $currItem = $personi->getItem($blerja['Item_ID']);
-                        // foreach ($allItems as $item) :
-                        //     $currItem = $personi->getItem($item['id']);
-
                     ?>
                             <div class="product row">
                                 <img src="../../photos/shoping-bag.png" alt="">
                                 <div class="prod">
                                     <h3>name: <?php echo $currItem['emri'] ?></h3>
-                                    <h4>price: <?php echo $currItem['cmimi']; ?> $</h4>
+                                    <h4>price: <?php echo $currItem['cmimi']; ?>$</h4>
                                 </div>
                             </div>
                     <?php endforeach;
@@ -105,61 +80,61 @@ $id_user = $_SESSION['id'];
         <div class="events">
             <h1>Eventet qe do marr pjese:</h1>
             <div class="events-holder column">
+                <?php 
+                
+                $allEventet = $personi->readEvent($id_user);
+
+                    foreach ($allEventet as $event) :
+                        
+                        $currDesc = $personi->getEvent($event['Event_ID']);
+                        if ($eventet->validEvent($currDesc['Data_e'])) :
+                
+                ?>
+
                 <div class="event-card row">
-                    <img src="../../photos/8 marsi.jpg.jpg" alt="">
+                    <img src="<?php echo $currDesc['Foto_eventi']; ?>" alt="">
                     <div class="info">
-                        <h2>hello event</h2>
-                        <h3>event cat</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Inventore, similique ratione earum doloremque laborum quia voluptas
-                            non iure, odio aliquam quam soluta? Totam nostrum, possimus veritatis beatae animi vero voluptate.</p>
+                        <!-- $currDesc -->
+                        <h2><?php echo $currDesc['Emri_eventit']; ?></h2>
+                        <h3><?php echo $currDesc['Data_e']; ?></h3>
+                        <p><?php echo $currDesc['Description_e']; ?></p>
                     </div>
                 </div>
-                <div class="event-card row">
-                    <img src="../../photos/prishtina_marakli.jpg" alt="">
-                    <div class="info">
-                        <h2>hello event</h2>
-                        <h3>event cat</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Inventore, similique ratione earum doloremque laborum quia voluptas
-                            non iure, odio aliquam quam soluta? Totam nostrum, possimus veritatis beatae animi vero voluptate.</p>
-                    </div>
-                </div>
-                <div class="event-card row">
-                    <img src="../../photos/28n.jpg" alt="">
-                    <div class="info">
-                        <h2>hello event</h2>
-                        <h3>event cat</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Inventore, similique ratione earum doloremque laborum quia voluptas
-                            non iure, odio aliquam quam soluta? Totam nostrum, possimus veritatis beatae animi vero voluptate.</p>
-                    </div>
-                </div>
+
+                <?php 
+                endif;
+            endforeach;
+                    // endforeach; ?>
+                
 
             </div>
             <h1>Eventet e kaluara</h1>
             <div class="events-holder column">
+            <?php 
+                
+                $allEventet = $personi->readEvent($id_user);
+
+                    foreach ($allEventet as $event) :
+                        
+                        $currDesc = $personi->getEvent($event['Event_ID']);
+                        if (!($eventet->validEvent($currDesc['Data_e']))) :
+                
+                ?>
+
                 <div class="event-card row">
-                    <img src="../../photos/prizren.jpg" alt="">
+                    <img src="<?php echo $currDesc['Foto_eventi']; ?>" alt="">
                     <div class="info">
-                        <h2>hello event</h2>
-                        <h3>event cat</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Inventore, similique ratione earum doloremque laborum quia voluptas
-                            non iure, odio aliquam quam soluta? Totam nostrum, possimus veritatis beatae animi vero voluptate.</p>
-                    </div>
-                </div>
-                <div class="event-card row">
-                    <img src="../../photos/peje.jpg" alt="">
-                    <div class="info">
-                        <h2>hello event</h2>
-                        <h3>event cat</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Inventore, similique ratione earum doloremque laborum quia voluptas
-                            non iure, odio aliquam quam soluta? Totam nostrum, possimus veritatis beatae animi vero voluptate.</p>
+                        <!-- $currDesc -->
+                        <h2><?php echo $currDesc['Emri_eventit']; ?></h2>
+                        <h3><?php echo $currDesc['Data_e']; ?></h3>
+                        <p><?php echo $currDesc['Description_e']; ?></p>
                     </div>
                 </div>
 
+                <?php 
+                endif;
+            endforeach;
+                    // endforeach; ?>
             </div>
         </div>
     </div>

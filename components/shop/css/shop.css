@@ -178,19 +178,6 @@ body {
     cursor: pointer;
 }
 
-.text h3:hover {
-    background-color: var(--green);
-    color: white;
-    border-radius: 20px;
-}
-
-.text h3:hover span {
-    display: none
-}
-
-.text h3:hover:before {
-    content: "Blej"
-}
 
 .colors {
     text-align: center;
@@ -300,16 +287,26 @@ a {
 input {
     font-family: Bison;
     border-radius: 20px;
+    border-radius: 3px;
     border: 1px solid #0E49B5;
     background-color: #0E49B5;
     color: #FFFFFF;
     font-size: 20px;
     font-weight: bold;
     padding: 5px 25px;
+    padding: 5px 50px;
+    margin: 3px 0px;
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: transform 80ms ease-in;
 }
+
+input:hover {
+    background-color: var(--green);
+    border-color: var(--green);
+}
+
+
 
 @media screen and (max-width: 780px) {
     .cloths-item {
