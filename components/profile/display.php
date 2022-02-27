@@ -35,6 +35,9 @@ $dhenat=new UserControll();
     <td><?=$value['Email']?></td>
     <td><?=$value['Pass']?></td>
 </tr>
+<?php
+}
+?>
         </table>
     </div>
 </body>

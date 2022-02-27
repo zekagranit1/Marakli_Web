@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 require_once '../../controllers/eventControll.php';
 session_start();
 $isAdmin = $_SESSION['is_admin'];
@@ -38,11 +39,15 @@ $isAdmin = $_SESSION['is_admin'];
         </div>
     </div> -->
     <div class="main">
+    <?php?>   
 
-
-        <h1 class="nen_titull">Upcoming events</h1>
+        <h1 class="nen_titull">Upcoming events </h1>
+        <?php if ($isAdmin == 1) : ?>
+                                   <a href="EventetAdd.php?ID=<?php echo $event['ID']; ?>" style="font-size:25px  ; color:red"class="comand">      Create event</a>
+                            <?php endif; ?>
         <div class="container">
-
+        
+        <a>
             <?php
             $eventet = new EventControll();
             $events = $eventet->readEvent();
@@ -66,7 +71,10 @@ $isAdmin = $_SESSION['is_admin'];
                             <h3><?php echo $event['Emri_eventit']; ?></h3>
                             <p class="ora ">Ora dhe data:</p>
                             <p class="ora "><?php echo $event['Data_e']; ?></p>
-                            <button>Going</button>
+                            <?php  $_SESSION['superhero'] = $event['ID'];?>  
+                            <form action="Event_Validation.php" method="post"> 
+                            <button onclick="window.location.href='Event_Validation.php'" name="<?php $event['ID']?>" type="submit">Going</button>
+                            </form>
                             <p class="read">Hold picture to read more</p>
                             <?php if ($isAdmin == 1) : ?>
                                 <td><a href="EventetEdit.php?ID=<?php echo $event['ID']; ?>" class="comand">EDIT</a></td>
@@ -100,7 +108,7 @@ $isAdmin = $_SESSION['is_admin'];
                         </div>
                         <div class="text active ">
                             <h3><?php echo $event['Emri_eventit']; ?></h3>
-                            <p class="ora ">ORA dhe data:</p>
+                            <p class="ora ">Ora dhe data:</p>
                             <p class="ora " style="padding-bottom: 5px;"><?php echo $event['Data_e']; ?></p>
                             <!-- <button id="review">Review</button>  -->
                             <p class="read ">Hold picture to read more</p>

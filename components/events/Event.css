@@ -80,7 +80,7 @@ body {
     height: inherit;
     visibility: hidden;
     transition: .5s ease;
-    background-color: var(--blue);
+    background-color: black;
 }
 
 .upfoto:active .overlay {
@@ -102,7 +102,7 @@ body {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    text-align: center;
+    text-align: left;
 }
 
 
@@ -119,6 +119,11 @@ body {
 
 .read {
     padding-bottom: 5px;
+    font-size: 12px;
+}
+
+.ora {
+    font-size: 20px;
 }
 
 .read:hover {
@@ -128,6 +133,9 @@ body {
 @media screen and (max-width: 1000px) {
     .container {
         flex-direction: column;
+    }
+    .main {
+        margin: 50px 0px 50px 0px
     }
 }
 
@@ -164,7 +172,6 @@ img {
 .text p {
     margin: 0px 0px;
     opacity: 1;
-    font-size: 20px;
     font-family: 'Roboto', sans-serif;
 }
 

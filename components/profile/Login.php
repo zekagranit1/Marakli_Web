@@ -9,64 +9,6 @@
     <script src="https://kit.fontawesome.com/de3305a7cd.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width">
     <title>Sign in</title>
-    <style>
-        
-@media screen and (max-width: 500px) {
-    .container {
-        box-shadow: 0 0px 0px white, 0 0px 0px white;
-        width: 100%;
-        max-width: 80%;
-        min-height: 100%;
-    }
-    body {
-        background: white;
-        justify-content: normal;
-        margin: 0px;
-    }
-    form {
-        background-color: #FFFFFF;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding: 0 194px;
-        height: 50%;
-        text-align: center;
-        padding: 200px 30px 0px 30px;
-    }
-    .sign-in-container {
-        left: 0;
-        width: 100%;
-        z-index: 2;
-    }
-    .form-container {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        transition: all 0.6s ease-in-out;
-    }
-    .overlay-container {
-        display: none;
-    }
-    .overlay-right {
-        display: none;
-    }
-    .overlay-panel {
-        padding: 0 20px;
-    }
-    .signup_hide {
-        display: unset;
-        font-size: 30px;
-        color: var(--green);
-    }
-    .backhome_hide {
-        visibility: visible;
-        color: black;
-        font-size: 12px;
-        margin-top: 10px;
-    }
-}
-    </style>
 </head>
 
 <body>
