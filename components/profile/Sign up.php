@@ -30,22 +30,56 @@ if (isset($_POST['submit'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/sign_up.css">
+    
+    <script>
+        function validateForm() {
+        var a = document.forms["SignUp"]["emri"].value;
+        var b = document.forms["SignUp"]["mbiemri"].value;
+        var c = document.forms["SignUp"]["mosha"].value;
+        var d = document.forms["SignUp"]["email"].value;
+        var e = document.forms["SignUp"]["password"].value;
+        var f = document.forms["SignUp"]["konfirm"].value;
+        var n = document.forms["SignUp"]["adresa"].value;
+        if (!a || !b || !c|| !d|| !e|| !f|| !n) {
+        alert("Ju lutem plotsoni te gjitha fushat");
+        return false;
+    }
+        if (c< 16) {
+        alert("Mosha duhet te jete mbi 16 vjeq");
+        return false;}
+        var textcheck = /[A-Z][a-z]*/;
+        var passcheck =/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+        if (!passcheck.test(e)){
+        alert("Password duhet te permbaje: 8 ose me shume karaktere, numra, simbole, dhe te filloj me shkronje te madhe");
+        return false;
+        }
+        if(!(e==f)){
+        alert("GABIM! shkruani passin dhe verifikimin sakt");
+        return false;
+        }
+        if (!textcheck.test(a)||!textcheck.test(b)){
+        alert("Emri dhe mbiemri duhet te fillojne me shkronje te madhe dhe duhet vetem shkronja");
+        return false;
+        }
+        
+}
+    </script>
 </head>
 
 <body>
 
     <div class="wrapper" style="background-color:white;">
         <div class="inner">
-            <form method="POST">
+            <form method="POST" name="SignUp" onsubmit="return validateForm()">
                 <h1 style="font-family: 'Montserrat', sans-serif; margin: 10px 0px;">Regjistrohu | <a href="./Login.php"> Log in</a></h1>
                 <div class="form-group"></div>
                 <div class="form-wrapper">
                     <label for="">Emri:</label>
-                    <input name="emri" type="text" class="form-control" placeholder="filan">
+                    <input name="emri" type="text" class="form-control" placeholder="Filan">
                 </div>
                 <div class="form-wrapper">
                     <label for="">Mbiemri:</label>
-                    <input name="mbiemri" type="text" class="form-control" placeholder="fisteku">
+                    <input name="mbiemri" type="text" class="form-control" placeholder="Fisteku">
                 </div>
                 <div class="form-wrapper">
                     <label for="">Adresa:</label>
@@ -53,7 +87,7 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div class="form-wrapper">
                     <label for="">Email:</label>
-                    <input name ="email" type="text" class="form-control" placeholder="email@adress.com">
+                    <input name ="email" type="email" class="form-control" placeholder="email@adress.com">
                 </div>
                 <div class="form-group">
                     <div class="form-wrapper">
@@ -81,11 +115,10 @@ if (isset($_POST['submit'])) {
                     </div> -->
                 </div>
                 <!-- <button id="register" onclick="validation()">Register Now</button> -->
-                <button type="submit" name="submit">Register Now</button>
+                <button type="submit" onclick="valid()" name="submit">Register Now</button>
             </form>
         </div>
     </div>
-    <script src="./js/sign up.js"></script>
 </body>
 
 </html>

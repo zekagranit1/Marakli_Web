@@ -1,7 +1,6 @@
 <?php 
 session_start();
 echo $_SESSION['emri'];
-$baba = $_SESSION['emri'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
