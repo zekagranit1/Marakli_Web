@@ -257,7 +257,7 @@ session_start();
     <div class="contact">
         <h2 style="margin-left: 20px; margin-bottom: 10px;"> contact us </h2>
         <div class="container">
-            <form action="#">
+            <form method="POST" action="../../controllers/emailSender.php">
                 <label for="fname">First Name</label>
                 <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
@@ -265,15 +265,16 @@ session_start();
                 <input type="text" id="lname" name="lastname" placeholder="Your last name..">
 
                 <label for="lname">E-mail</label>
-                <input type="email" id="lname" name="email" placeholder="Your last name..">
+                <input type="email" id="email" name="email" placeholder="Your last name..">
 
                 <label for="subject">Subject</label>
                 <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
-                <input type="submit" value="Submit">
+                <input type="submit" name="submit" value="Submit">
             </form>
         </div>
     </div>
+    
 
     <?php
         include './footer.php'
