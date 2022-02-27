@@ -112,7 +112,7 @@ session_start();
                 <h1 >JOIN US</h1> 
                 <h2 >Aty ku na bashkon pasioni për çiklizmin!</h2>        
                 <button>
-                    <a class="link" href="../profile/Login.html">sign up</a>
+                    <a class="link" href="../profile/sign up.php">sign up</a>
                 </button>                  
             </div>
         </div>
