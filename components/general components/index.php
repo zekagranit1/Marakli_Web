@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -23,9 +27,18 @@
                 <a class="link" href="../general components/index.php">Home</a>
                 <a class="link" href="../events/Eventet.php">Eventet</a>
                 <a class="link" href="../shop/shop.php">Shop</a>
-                <a href='../profile/Sign up.html' class="active link" href="#">Join Us</a>
-                <a class="link" href="../profile/Login.php">login</a>
-                <a class="link" href="../profile/profile.php">Profile</a>
+                <!-- <?php if ($_SESSION['isLoged']): ?> -->
+                    <a class="link" href="../profile/profile.php"><?php echo $_SESSION['emri']." ".$_SESSION['mbiemri'];?></a>
+                    <a class="link" href="../profile/logout.php">Log out</a>
+                
+
+                <!-- <?php else: ?> -->
+                    <a class="link" href="../profile/Login.php">Log in</a>
+                    <a class="active" href="../profile/Sign up.php">Join Us</a>
+                    <!-- <?php endif;?> -->
+                <!-- <a class="link" href="../profile/Login.php">login</a>
+                <a href='../profile/Sign up.html' class="active link" href="#">Join Us</a> -->
+                <!-- <a class="link" href="../profile/profile.php">Profile</a> -->
             </div>
         </div>
     </div>

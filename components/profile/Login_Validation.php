@@ -1,5 +1,6 @@
 <?php
 
+
 session_start();
 require '../../controllers/UserControll.php';
 
@@ -14,13 +15,12 @@ if(isset($_POST['login'])){
 
     if(validateEmptyData($email,$password)){
         header("Location: Login.php");
-        $_SESSION['isLoged']=false;
+        
     } else if(vlaidateData($email,$password)){
         header("Location: ../general components/index.php?id=".$_SESSION['id']);
-        $_SESSION['isLoged']=true;
     } else {
         header("Location: Login.php");
-        $_SESSION['isLoged']=false;
+        
     }
 
 }
@@ -43,6 +43,7 @@ function vlaidateData($email,$password){
             $_SESSION['mosha'] = $user['Mosha'];
             $_SESSION['email'] = $user['Email'];
             $_SESSION['id'] = $user['id'];
+            $_SESSION['isLoged']=TRUE;
             return true;
         }
     }

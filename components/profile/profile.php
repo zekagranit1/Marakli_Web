@@ -10,11 +10,17 @@ echo $_SESSION['is_admin'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
-    <script src="./js/"></script>
+    <!-- <script src="./js/"></script> -->
+    
+    <link rel="stylesheet" href="../general components/css/nav_bar.css">
+    <script src="../general components/js/nav.js"></script>
     <link rel="stylesheet" href="./css/profile.css">
+
 </head>
-<body>
-    <div class="main row">
+<body style=" margin-top: 80px;">
+<?php include '..\general components\navbar.php';
+?>
+    <div class="main row" >
         <div class="profile column">
             <div class="profile-part">
 

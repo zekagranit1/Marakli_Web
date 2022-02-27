@@ -2,6 +2,7 @@
 require_once '../../controllers/eventControll.php';
 session_start();
 $isAdmin = $_SESSION['is_admin'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +20,9 @@ $isAdmin = $_SESSION['is_admin'];
 </head>
 
 <body>
-    <?php include '..\general components\navbar.php'
+    <?php include '..\general components\navbar.php';
+
+    // $nav = new navbar($_SESSION['isLoged'],$_SESSION['emri'],$_SESSION['mbiemri']);
     ?>
     <!-- <div id="navbar">
         <div id="nav-holder">
